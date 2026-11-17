@@ -285,5 +285,124 @@
         {"name": "萨尔贡浓茶"}
       ]}
     ]
+  },
+  {
+    "id": "curated-lethania-dabian",
+    "name": "大变莱塔尼亚",
+    "core": "莱塔尼亚",
+    "extra": "奥术",
+    "strategy": "band_damaztic",
+    "difficulty": "高",
+    "strength": 0.94,
+    "source": "抖音 @无糖冰淇淋《卫戍协议现代最强阵容！大变莱塔尼亚》2026-11-10",
+    "sourceUrl": "https://www.douyin.com/video/7706470460594903531",
+    "essential": ["空弦", "车尔尼", "黑键", "艾雅法拉", "纯烬艾雅法拉", "薇薇安娜"],
+    "flex": ["霍尔海雅", "灵知"],
+    "key": "空弦",
+    "notes": "变形者集群给变形同构体；空弦带「变形同构体+莱塔尼亚小鼓」转莱塔尼亚并当主 C。车尔尼送小鼓，黑键/艾雅法拉叠精准/奥术，纯烬艾雅法拉续航，薇薇安娜用精锐奖励抽。视频口径最终约 6 莱塔尼亚 + 3 奥术 + 3 精准；装备槽位以游戏内为准。",
+    "phases": {
+      "early": "选变形者集群；前期用莱塔尼亚/远见牌稳步发育，车尔尼、黑键、艾雅法拉过渡，2-3 本不深刷。",
+      "mid": "4 本找霍尔海雅；攒「变形同构体+莱塔尼亚小鼓」给空弦转职；补黑键、艾雅法拉、纯烬艾雅法拉。",
+      "late": "凑 6 莱塔尼亚，补 3 奥术/3 精准；用精锐奖励抽薇薇安娜；空弦主 C，装备优先狙击镜/奥术法阵。"
+    },
+    "loadout": [
+      {"opId": "空弦", "note": "主 C；变形同构体+小鼓转莱塔尼亚。", "items": [
+        {"name": "变形同构体", "jobChangeTo": "莱塔尼亚", "note": "与小鼓同装"},
+        {"name": "莱塔尼亚小鼓", "jobChangeTo": "莱塔尼亚"},
+        {"name": "精准狙击镜"},
+        {"name": "奥术法阵"}
+      ]},
+      {"opId": "车尔尼", "note": "送小鼓，前期关键。", "items": [
+        {"name": "莱塔尼亚小鼓"},
+        {"name": "坚守盾牌", "generic": true},
+        {"name": "歌利亚头盔", "generic": true}
+      ]},
+      {"opId": "黑键", "note": "精准/莱塔尼亚叠层。", "items": [
+        {"name": "精准狙击镜"},
+        {"name": "莱塔尼亚小鼓"}
+      ]},
+      {"opId": "艾雅法拉", "note": "奥术/莱塔尼亚输出。", "items": [
+        {"name": "奥术法阵"},
+        {"name": "源石溶剂", "generic": true}
+      ]},
+      {"opId": "纯烬艾雅法拉", "note": "奶位/续航。", "items": [
+        {"name": "聚合急救箱", "generic": true},
+        {"name": "护盾无人机", "generic": true}
+      ]},
+      {"opId": "薇薇安娜", "note": "精锐奖励抽取；奥术/近战输出。", "items": [
+        {"name": "奥术法阵"},
+        {"name": "精准狙击镜", "generic": true},
+        {"name": "维式重锤", "generic": true}
+      ]},
+      {"opId": "霍尔海雅", "note": "奥术/精准叠层。", "items": [
+        {"name": "奥术法阵"},
+        {"name": "精准狙击镜"},
+        {"name": "迅捷作战粮", "generic": true}
+      ]},
+      {"opId": "灵知", "note": "灵巧/迅捷挂件。", "items": [
+        {"name": "灵巧涡轮手套", "generic": true},
+        {"name": "迅捷作战粮", "generic": true}
+      ]}
+    ]
+  },
+  {
+    "id": "curated-sargon-kjerag-storm",
+    "name": "萨尔贡·谢拉格 风雪黄沙",
+    "core": "萨尔贡",
+    "extra": "谢拉格",
+    "strategy": "band_damaztic",
+    "difficulty": "高",
+    "strength": 0.91,
+    "source": "抖音 @守护骡博《卫戍协议风雪与黄沙》2026-11-15",
+    "sourceUrl": "https://www.douyin.com/video/7708296386768309544",
+    "essential": ["佩佩", "凛御银灰", "莎草", "初雪", "夜莺", "华法琳"],
+    "flex": ["耶拉", "异客"],
+    "key": "佩佩",
+    "notes": "核心是佩佩和凛御银灰互换盟约：佩佩带「变形同构体+谢拉格不融冰」转谢拉格，凛御银灰带「变形同构体+萨尔贡浓茶」转萨尔贡。萨尔贡叠攻击，谢拉格/灵巧叠层上限 +150%；夜莺/华法琳/莎草开聚合，初雪补谢拉格/协防。视频过渡还提到耶拉、异客。",
+    "phases": {
+      "early": "选变形者集群；前期用莎草、耶拉、异客、夜莺、初雪、华法琳过渡，尽快升 5 本。",
+      "mid": "佩佩转谢拉格、凛御银灰转萨尔贡，凑 3 萨尔贡 + 3 谢拉格 + 2 灵巧；夜莺/华法琳开聚合。",
+      "late": "补初雪/莎草，叠谢拉格和灵巧层数；佩佩主 C，凛御银灰副 C；决赛看盟约层数和聚合续航。"
+    },
+    "loadout": [
+      {"opId": "佩佩", "note": "主 C；转谢拉格。", "items": [
+        {"name": "变形同构体", "jobChangeTo": "谢拉格", "note": "与不融冰同装"},
+        {"name": "谢拉格不融冰", "jobChangeTo": "谢拉格"},
+        {"name": "灵巧涡轮手套", "generic": true},
+        {"name": "维式重锤", "generic": true}
+      ]},
+      {"opId": "凛御银灰", "note": "副 C；转萨尔贡。", "items": [
+        {"name": "变形同构体", "jobChangeTo": "萨尔贡", "note": "与浓茶同装"},
+        {"name": "萨尔贡浓茶", "jobChangeTo": "萨尔贡"},
+        {"name": "灵巧涡轮手套", "generic": true},
+        {"name": "维式重锤", "generic": true}
+      ]},
+      {"opId": "莎草", "note": "萨尔贡/聚合奶。", "items": [
+        {"name": "萨尔贡浓茶"},
+        {"name": "聚合急救箱", "generic": true}
+      ]},
+      {"opId": "初雪", "note": "谢拉格/协防辅助。", "items": [
+        {"name": "谢拉格不融冰"},
+        {"name": "灵巧涡轮手套", "generic": true},
+        {"name": "多功能补剂", "generic": true}
+      ]},
+      {"opId": "夜莺", "note": "聚合/协防奶。", "items": [
+        {"name": "聚合急救箱", "generic": true},
+        {"name": "护盾无人机", "generic": true}
+      ]},
+      {"opId": "华法琳", "note": "聚合/灵巧奶。", "items": [
+        {"name": "聚合急救箱", "generic": true},
+        {"name": "多功能补剂", "generic": true}
+      ]},
+      {"opId": "耶拉", "note": "谢拉格/奇迹过渡。", "items": [
+        {"name": "谢拉格不融冰"},
+        {"name": "精准狙击镜", "generic": true}
+      ]},
+      {"opId": "异客", "note": "萨尔贡/精准过渡。", "items": [
+        {"name": "萨尔贡浓茶"},
+        {"name": "奥术法阵"},
+        {"name": "精准狙击镜"}
+      ]}
+    ]
   }
 ]

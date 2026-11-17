@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><title>douyin comp test</title></head>
+<body>
+<pre id="out">running...</pre>
+<iframe id="app" src="../index.html" style="width:1400px;height:900px;border:1px solid #333"></iframe>
+<script>
+  var f = document.getElementById("app");
+  f.onload = function () {
+    setTimeout(function () {
+      var d = f.contentDocument;
+      var w = f.contentWindow;
+      var out = [];
+      function q(s) { return d.querySelector(s); }
+      function qa(s) { return Array.prototype.slice.call(d.querySelectorAll(s)); }
+
+      qa(".center-tab").filter(function (b) { return b.dataset.center === "library"; })[0].click();
+      var items = qa("#compList details");
+      ["大变莱塔尼亚", "风雪黄沙"].forEach(function (name) {
+        var item = items.filter(function (x) {
+          return (x.querySelector("summary") || {}).innerText && x.querySelector("summary").innerText.indexOf(name) >= 0;
+        })[0];
+        if (!item) { out.push(name + "=missing"); return; }
+        item.open = true;
+        var table = item.querySelector(".loadout-table");
+        var src = item.querySelector(".source-link");
+        out.push(name + " loadoutRows=" + (table ? table.querySelectorAll("tbody tr").length : 0) +
+          " source=" + (src ? src.href : "none"));
+        out.push(name + " text=" + item.innerText.replace(/\n/g, " | ").slice(0, 260));
+      });
+
+      qa(".center-tab").filter(function (b) { return b.dataset.center === "rec"; })[0].click();
+      var ly = qa("#coreFilter [data-core]").filter(function (b) { return b.dataset.core === "莱塔尼亚"; })[0];
+      if (ly) ly.click();
+      out.push("lethaniaRecs=" + qa("#recommendations .rec-card h3").map(function (h) { return h.innerText; }).join(","));
+      q("#clearFilter").click();
+      var sg = qa("#coreFilter [data-core]").filter(function (b) { return b.dataset.core === "萨尔贡"; })[0];
+      if (sg) sg.click();
+      out.push("sargonRecs=" + qa("#recommendations .rec-card h3").map(function (h) { return h.innerText; }).join(","));
+
+      try { w.localStorage.removeItem("stronghold-advisor-v1"); } catch (e) { }
+      document.getElementById("out").textContent = out.join("\n");
+    }, 400);
+  };
+</script>
+</body>
+</html>
