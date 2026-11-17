@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><title>custom shot</title></head>
+<body style="margin:0;background:#0a0e14">
+<iframe id="app" src="../index.html" style="width:1440px;height:1500px;border:0"></iframe>
+<script>
+  var f = document.getElementById("app");
+  function run() {
+    var d = f.contentDocument;
+    var w = f.contentWindow;
+    function q(s) { return d.querySelector(s); }
+    var tabs = Array.prototype.slice.call(d.querySelectorAll(".center-tab"));
+    tabs.filter(function (b) { return b.dataset.center === "custom"; })[0].click();
+    var cs = q("#customCore");
+    cs.value = "炎";
+    cs.dispatchEvent(new w.Event("change", { bubbles: true }));
+    var ce = q("#customExtra");
+    ce.value = "奥术";
+    ce.dispatchEvent(new w.Event("change", { bubbles: true }));
+    q("#customAutoAll").click();
+  }
+  if (f.contentDocument && f.contentDocument.readyState === "complete") {
+    setTimeout(run, 300);
+  } else {
+    f.onload = function () { setTimeout(run, 300); };
+  }
+</script>
+</body>
+</html>

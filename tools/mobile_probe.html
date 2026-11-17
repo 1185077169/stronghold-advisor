@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><title>mobile probe</title></head>
+<body>
+<pre id="out">running...</pre>
+<iframe id="app" src="../dist/index.html" style="width:390px;height:900px;border:1px solid #333"></iframe>
+<script>
+  var f = document.getElementById("app");
+  f.onload = function () {
+    setTimeout(function () {
+      var d = f.contentDocument;
+      var vw = d.documentElement.clientWidth;
+      var out = ["viewport=" + vw + " scrollWidth=" + d.documentElement.scrollWidth + " bodyScroll=" + d.body.scrollWidth];
+      var all = Array.prototype.slice.call(d.querySelectorAll("body *"));
+      var bad = all.map(function (el) {
+        var r = el.getBoundingClientRect();
+        return { el: el, right: Math.round(r.right), width: Math.round(r.width) };
+      }).filter(function (x) { return x.right > vw + 1; })
+        .sort(function (a, b) { return b.right - a.right; }).slice(0, 12);
+      bad.forEach(function (x) {
+        out.push(x.el.tagName + "." + (x.el.className || "").toString().replace(/\s+/g, ".") +
+          " right=" + x.right + " width=" + x.width + " text=" + (x.el.innerText || "").slice(0, 40).replace(/\n/g, " "));
+      });
+      document.getElementById("out").textContent = out.join("\n");
+    }, 500);
+  };
+</script>
+</body>
+</html>

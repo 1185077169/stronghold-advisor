@@ -1,0 +1,289 @@
+[
+  {
+    "id": "curated-victoria-dachou",
+    "name": "维转大丑",
+    "core": "维多利亚",
+    "extra": "灵巧",
+    "strategy": "band_mech",
+    "difficulty": "高",
+    "strength": 0.97,
+    "source": "VGTip《维转大丑…》2026-11-10（赛博猛男不会遇到电子）",
+    "sourceUrl": "https://vgtip.3loumao.org/article/wei-shu-xie-yi-wei-zhuan-da.html",
+    "essential": ["白铁", "涤火杰西卡", "酒神", "维娜·维多利亚", "号角", "缪尔赛思"],
+    "flex": ["暴躁铁皮", "凛御银灰"],
+    "key": "暴躁铁皮",
+    "notes": "6 维靠缪尔赛思带「变形同构体+维式重锤」转职；大丑是主 C，站盾侧位吃狙击镜；白铁每回合提供 2 件精锐装备，机器放盾前给大丑回技力。",
+    "phases": {
+      "early": "2 本找通讯器/大丑；白铁、杰西卡、号角过渡；优先升本，7 回合前到 5 本。",
+      "mid": "凑 5 名维多利亚 + 缪尔赛思转职开 6 维；大丑带狙击镜站盾侧；补灵巧（凛御银灰/云迹）。",
+      "late": "补酒神/维娜，给大丑堆狙击镜/通讯器；白铁机器放盾前回技力，主 C 升精锐。"
+    },
+    "loadout": [
+      {"opId": "缪尔赛思", "op": "缪尔赛思", "note": "转职位：变形同构体+维式重锤→维多利亚；没有缪缪时用第 6 名维多利亚替代。", "items": [
+        {"name": "变形同构体", "jobChangeTo": "维多利亚", "note": "与维式重锤同装"},
+        {"name": "维式重锤", "jobChangeTo": "维多利亚"},
+        {"name": "佣兵名牌", "generic": true}
+      ]},
+      {"opId": "暴躁铁皮", "op": "大丑", "note": "6 狙击镜是 2 本大丑特化；维转套优先通讯器+博士投影保证启动，剩余槽位狙击镜。", "items": [
+        {"name": "简易通讯机", "note": "回技力"},
+        {"name": "博士投影", "note": "升精锐"},
+        {"name": "精准狙击镜", "qty": 4, "note": "盾侧位 3 格以上"}
+      ]},
+      {"opId": "白铁", "note": "每回合 2 件精锐装备；机器放盾前给大丑回技力。", "items": [
+        {"name": "卫戍推荐信", "note": "休整期叠层"},
+        {"name": "佣兵名牌", "generic": true}
+      ]},
+      {"opId": "涤火杰西卡", "note": "主坦/坚守。", "items": [
+        {"name": "坚守盾牌", "generic": true},
+        {"name": "歌利亚头盔", "generic": true}
+      ]},
+      {"opId": "号角", "note": "副坦/控制（攻略里的“勇敢牛牛”）。", "items": [
+        {"name": "不退者之盾", "generic": true},
+        {"name": "坚守盾牌", "generic": true}
+      ]},
+      {"opId": "维娜·维多利亚", "note": "近战输出/维多利亚大王。", "items": [
+        {"name": "加速维式重锤", "generic": true},
+        {"name": "维式重锤", "generic": true}
+      ]},
+      {"opId": "酒神", "note": "辅助/叠层。", "items": [
+        {"name": "佣兵名牌", "generic": true},
+        {"name": "多功能补剂", "generic": true}
+      ]},
+      {"opId": "凛御银灰", "note": "灵巧挂件。", "items": [
+        {"name": "灵巧涡轮手套", "generic": true},
+        {"name": "叙拉古正装", "generic": true}
+      ]}
+    ]
+  },
+  {
+    "id": "curated-lethania-dachou",
+    "name": "精准莱塔尼亚转大丑",
+    "core": "莱塔尼亚",
+    "extra": "精准",
+    "strategy": "band_mech",
+    "difficulty": "高",
+    "strength": 0.95,
+    "source": "VGTip《精准莱塔尼亚转大丑…》2026-11-11（赛博猛男不会遇到电子）",
+    "sourceUrl": "https://vgtip.3loumao.org/article/wei-shu-xie-yi-wo-you-yan.html",
+    "essential": ["车尔尼", "艾雅法拉", "黑键", "纯烬艾雅法拉", "缪尔赛思", "暴躁铁皮"],
+    "flex": ["霍尔海雅", "灵知"],
+    "key": "暴躁铁皮",
+    "notes": "4 莱塔尼亚（车尔尼/艾雅法拉/黑键/纯烬）+ 大丑/缪缪转职凑 6；霍尔海雅 1 技能叠奥术，灵知/淬羽赫默叠灵巧；大丑吃精准/莱塔尼亚/奥术转职。",
+    "phases": {
+      "early": "车尔尼/格雷伊送小鼓/狙击镜；先拿霍尔海雅、艾雅法拉、黑键，2-3 本过渡。",
+      "mid": "4 莱塔尼亚 + 大丑转职；灵巧叠层（灵知/淬羽赫默）；大丑带通讯器/博士投影启动。",
+      "late": "大丑补骨刺刀/精准/莱塔尼亚/奥术转职；奶妈保命，主 C 升精锐。"
+    },
+    "loadout": [
+      {"opId": "暴躁铁皮", "op": "大丑", "note": "转职按「变形同构体+对应道具」；槽位不足时优先精准/莱塔尼亚。", "items": [
+        {"name": "简易通讯机", "note": "回技力"},
+        {"name": "博士投影", "note": "升精锐"},
+        {"name": "伊比利亚骨刺刀", "note": "二次伤害"},
+        {"name": "精准狙击镜", "jobChangeTo": "精准", "note": "需配变形同构体"},
+        {"name": "莱塔尼亚小鼓", "jobChangeTo": "莱塔尼亚", "note": "需配变形同构体"},
+        {"name": "奥术法阵", "jobChangeTo": "奥术", "note": "可换骨刺刀"}
+      ]},
+      {"opId": "缪尔赛思", "note": "转职/第 6 莱塔尼亚位。", "items": [
+        {"name": "变形同构体", "jobChangeTo": "莱塔尼亚", "note": "与小鼓同装"},
+        {"name": "莱塔尼亚小鼓", "jobChangeTo": "莱塔尼亚"},
+        {"name": "佣兵名牌", "generic": true}
+      ]},
+      {"opId": "车尔尼", "note": "送小鼓，前期关键。", "items": [
+        {"name": "莱塔尼亚小鼓"},
+        {"name": "坚守盾牌", "generic": true}
+      ]},
+      {"opId": "艾雅法拉", "note": "奥术/莱塔尼亚输出。", "items": [
+        {"name": "奥术法阵"},
+        {"name": "源石溶剂", "generic": true}
+      ]},
+      {"opId": "黑键", "note": "精准/莱塔尼亚叠层。", "items": [
+        {"name": "精准狙击镜"},
+        {"name": "莱塔尼亚小鼓"}
+      ]},
+      {"opId": "纯烬艾雅法拉", "note": "奶位。", "items": [
+        {"name": "聚合急救箱", "generic": true},
+        {"name": "护盾无人机", "generic": true}
+      ]},
+      {"opId": "霍尔海雅", "note": "1 技能叠奥术。", "items": [
+        {"name": "精准狙击镜"},
+        {"name": "奥术法阵"},
+        {"name": "迅捷作战粮", "generic": true}
+      ]},
+      {"opId": "灵知", "note": "灵巧/迅捷叠层；可换淬羽赫默。", "items": [
+        {"name": "灵巧涡轮手套", "generic": true},
+        {"name": "迅捷作战粮", "generic": true}
+      ]}
+    ]
+  },
+  {
+    "id": "curated-ursus",
+    "name": "乌萨斯·奥术迅捷",
+    "core": "乌萨斯",
+    "extra": "奥术",
+    "strategy": "band_jesica",
+    "difficulty": "中",
+    "strength": 0.9,
+    "source": "VGTip《顶级轮椅 乌萨斯…》2026-11-09（苏白Seb）",
+    "sourceUrl": "https://vgtip.3loumao.org/article/wei-shu-xie-yi-gui-cheng-ding.html",
+    "essential": ["冻河", "塔露拉", "折桠", "乌啾", "维伊", "怒潮凛冬"],
+    "flex": ["霍尔海雅", "阿米娅"],
+    "key": "塔露拉",
+    "notes": "冻河叠乌萨斯/迅捷，塔露拉叠乌萨斯/奥术；前期折桠/烈夏/乌啾/真理过渡，霍尔海雅 1 技能换卡达叠奥术，阿米娅提升冻河叠层。",
+    "phases": {
+      "early": "先抓折桠、烈夏、乌啾激活乌萨斯；真理 1 块可买来凑羁绊；卡达/霍尔海雅叠奥术。",
+      "mid": "补维伊、冻河；波登可/青枳叠迅捷；怒潮凛冬可拿。",
+      "late": "塔露拉主 C，阿米娅提升冻河叠层；补 6 乌萨斯和奥术/迅捷层数。"
+    },
+    "loadout": [
+      {"opId": "冻河", "note": "叠层核心。", "items": [
+        {"name": "佣兵名牌", "generic": true},
+        {"name": "多功能补剂", "generic": true},
+        {"name": "迅捷作战粮", "generic": true}
+      ]},
+      {"opId": "塔露拉", "note": "输出核心。", "items": [
+        {"name": "奥术法阵"},
+        {"name": "加速维式重锤", "generic": true},
+        {"name": "源石溶剂", "generic": true}
+      ]},
+      {"opId": "折桠", "note": "前期盾位。", "items": [
+        {"name": "坚守盾牌", "generic": true},
+        {"name": "歌利亚头盔", "generic": true}
+      ]},
+      {"opId": "乌啾", "note": "奶位/聚合。", "items": [
+        {"name": "聚合急救箱", "generic": true},
+        {"name": "护盾无人机", "generic": true}
+      ]},
+      {"opId": "维伊", "note": "乌萨斯+奥术。", "items": [
+        {"name": "奥术法阵"},
+        {"name": "莱塔尼亚小鼓"}
+      ]},
+      {"opId": "怒潮凛冬", "note": "乌萨斯/奇迹。", "items": [
+        {"name": "佣兵名牌", "generic": true},
+        {"name": "多功能补剂", "generic": true}
+      ]},
+      {"opId": "霍尔海雅", "note": "1 技能叠奥术。", "items": [
+        {"name": "精准狙击镜"},
+        {"name": "奥术法阵"},
+        {"name": "迅捷作战粮", "generic": true}
+      ]},
+      {"opId": "阿米娅", "note": "提升冻河叠层。", "items": [
+        {"name": "佣兵名牌", "generic": true},
+        {"name": "多功能补剂", "generic": true}
+      ]}
+    ]
+  },
+  {
+    "id": "curated-sargon",
+    "name": "萨尔贡·精准",
+    "core": "萨尔贡",
+    "extra": "精准",
+    "strategy": "band_sargon",
+    "difficulty": "中",
+    "strength": 0.92,
+    "source": "NGA/切游 萨尔贡叠层攻略（异客 1 技能）",
+    "sourceUrl": "https://www.qieyou.com/content/146547",
+    "essential": ["异客", "莎草", "佩佩", "鸿雪", "森蚺", "缇缇"],
+    "flex": ["至简", "泡泡"],
+    "key": "异客",
+    "notes": "异客 1 技能短回转叠萨尔贡+精准；莎草/缇缇奶，佩佩 3 技能输出，鸿雪（大姨）补精准；森蚺中期战力，至简 1 块经济，泡泡坚守。",
+    "phases": {
+      "early": "异客、莎草、至简、泡泡过渡；异客 1 技能快速叠萨尔贡/精准。",
+      "mid": "补佩佩、鸿雪、森蚺；佩佩 3 技能，鸿雪站盾侧。",
+      "late": "缇缇/莎草保续航，异客浓茶充电，精准层数拉满。"
+    },
+    "loadout": [
+      {"opId": "异客", "note": "1 技能；浓茶充电。", "items": [
+        {"name": "萨尔贡浓茶"},
+        {"name": "精准狙击镜"},
+        {"name": "奥术法阵"}
+      ]},
+      {"opId": "莎草", "note": "奶/叠层。", "items": [
+        {"name": "聚合急救箱", "generic": true},
+        {"name": "护盾无人机", "generic": true}
+      ]},
+      {"opId": "佩佩", "note": "3 技能输出。", "items": [
+        {"name": "加速维式重锤", "generic": true},
+        {"name": "维式重锤", "generic": true},
+        {"name": "灵巧涡轮手套", "generic": true}
+      ]},
+      {"opId": "鸿雪", "note": "大姨，精准输出。", "items": [
+        {"name": "精准狙击镜"},
+        {"name": "加速维式重锤", "generic": true}
+      ]},
+      {"opId": "森蚺", "note": "中期战力/盾。", "items": [
+        {"name": "坚守盾牌", "generic": true},
+        {"name": "不退者之盾", "generic": true},
+        {"name": "迅捷作战粮", "generic": true}
+      ]},
+      {"opId": "缇缇", "note": "奶位。", "items": [
+        {"name": "聚合急救箱", "generic": true},
+        {"name": "护盾无人机", "generic": true}
+      ]},
+      {"opId": "至简", "note": "1 块经济/过渡。", "items": [
+        {"name": "佣兵名牌", "generic": true},
+        {"name": "定期存折", "generic": true}
+      ]},
+      {"opId": "泡泡", "note": "坚守盾。", "items": [
+        {"name": "坚守盾牌", "generic": true},
+        {"name": "歌利亚头盔", "generic": true}
+      ]}
+    ]
+  },
+  {
+    "id": "curated-kjerag",
+    "name": "谢拉格·灵巧精准",
+    "core": "谢拉格",
+    "extra": "灵巧",
+    "strategy": "band_kjerag",
+    "difficulty": "高",
+    "strength": 0.88,
+    "source": "NGA《卫戍协议-谢拉格阵容进阶知识》",
+    "sourceUrl": "https://bbs.nga.cn/read.php?tid=45614306",
+    "essential": ["圣聆初雪", "灵知", "锏", "雪猎", "耶拉", "角峰"],
+    "flex": ["淬羽赫默", "异客"],
+    "key": "圣聆初雪",
+    "notes": "SP 初雪带 3，灵知带 3 保初雪读条，锏带 2；灵巧线用灵知+淬羽赫默/林/锡人，精准线用雪猎/异客；角峰/蛇屠箱坚守。",
+    "phases": {
+      "early": "角峰、雪猎、耶拉过渡；优先把 SP 初雪加入助战/抓到。",
+      "mid": "灵知 3 技能保初雪读条，锏 2 技能；补灵巧/精准。",
+      "late": "淬羽赫默/异客补灵巧/精准，圣聆初雪 3 技能控场，角峰坚守。"
+    },
+    "loadout": [
+      {"opId": "圣聆初雪", "note": "3 技能；不融冰控场。", "items": [
+        {"name": "谢拉格不融冰"},
+        {"name": "精准狙击镜", "generic": true},
+        {"name": "奥术法阵", "generic": true}
+      ]},
+      {"opId": "灵知", "note": "3 技能保初雪读条。", "items": [
+        {"name": "灵巧涡轮手套", "generic": true},
+        {"name": "迅捷作战粮", "generic": true},
+        {"name": "叙拉古正装", "generic": true}
+      ]},
+      {"opId": "锏", "note": "2 技能。", "items": [
+        {"name": "灵巧涡轮手套", "generic": true},
+        {"name": "迅捷作战粮", "generic": true},
+        {"name": "维式重锤", "generic": true}
+      ]},
+      {"opId": "雪猎", "note": "精准叠层。", "items": [
+        {"name": "精准狙击镜", "generic": true},
+        {"name": "谢拉格不融冰"}
+      ]},
+      {"opId": "耶拉", "note": "送不融冰/控制。", "items": [
+        {"name": "谢拉格不融冰"},
+        {"name": "聚合急救箱", "generic": true}
+      ]},
+      {"opId": "角峰", "note": "坚守盾。", "items": [
+        {"name": "坚守盾牌", "generic": true},
+        {"name": "歌利亚头盔", "generic": true}
+      ]},
+      {"opId": "淬羽赫默", "note": "灵巧叠层；可换林/锡人/白面鸮。", "items": [
+        {"name": "灵巧涡轮手套", "generic": true},
+        {"name": "叙拉古正装", "generic": true}
+      ]},
+      {"opId": "异客", "note": "1 技能叠精准。", "items": [
+        {"name": "精准狙击镜", "generic": true},
+        {"name": "萨尔贡浓茶"}
+      ]}
+    ]
+  }
+]

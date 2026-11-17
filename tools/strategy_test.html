@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><title>strategy UI test</title></head>
+<body>
+<pre id="out">running...</pre>
+<iframe id="app" src="../index.html" style="width:1400px;height:900px;border:1px solid #333"></iframe>
+<script>
+  var f = document.getElementById("app");
+
+  function run() {
+    var d = f.contentDocument;
+    var w = f.contentWindow;
+    var out = [];
+    function q(s) { return d.querySelector(s); }
+    function qa(s) { return Array.prototype.slice.call(d.querySelectorAll(s)); }
+
+    // 选炎系策略
+    var sf = q("#strategyFilter");
+    sf.value = "band_yan";
+    sf.dispatchEvent(new w.Event("change", { bubbles: true }));
+    out.push("hint=" + q("#strategyHint").innerText);
+    out.push("descHidden=" + q("#strategyDesc").hidden);
+    out.push("desc=" + q("#strategyDesc").innerText.replace(/\n/g, " | ").slice(0, 160));
+    out.push("recs=" + qa("#recommendations .rec-card h3").map(function (h) { return h.innerText; }).join(","));
+    out.push("recKV=" + q("#recommendations .rec-card .kv").innerText.replace(/\n/g, " "));
+
+    // 再选核心炎
+    qa("#coreFilter [data-core]").filter(function (b) { return b.dataset.core === "炎"; })[0].click();
+    out.push("after-炎 recs=" + qa("#recommendations .rec-card h3").map(function (h) { return h.innerText; }).join(","));
+
+    // 切到自己配，策略应自动带过去
+    qa(".center-tab").filter(function (b) { return b.dataset.center === "custom"; })[0].click();
+    out.push("customStrategy=" + q("#customStrategy").value);
+    out.push("customStats=" + q("#customStats").innerText.replace(/\n/g, " | "));
+
+    // 改成乌萨斯核心，应提示策略不匹配
+    var cc = q("#customCore");
+    cc.value = "乌萨斯";
+    cc.dispatchEvent(new w.Event("change", { bubbles: true }));
+    out.push("mismatchStats=" + q("#customStats").innerText.replace(/\n/g, " | "));
+    out.push("warnings=" + q("#customWarnings").innerText.replace(/\n/g, " | "));
+
+    try { w.localStorage.removeItem("stronghold-advisor-v1"); } catch (e) { }
+    document.getElementById("out").textContent = out.join("\n");
+  }
+
+  if (f.contentDocument && f.contentDocument.readyState === "complete") {
+    setTimeout(run, 300);
+  } else {
+    f.onload = function () { setTimeout(run, 300); };
+  }
+</script>
+</body>
+</html>

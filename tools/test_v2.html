@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><title>engine v2 test</title></head>
+<body>
+<pre id="out">running...</pre>
+<script src="../js/data.js"></script>
+<script src="../js/engine.js"></script>
+<script>
+  var S = window.SEASON, E = window.Engine;
+  E.init(S);
+  function st(over) {
+    var base = {
+      mode: "all", owned: new Set(), board: new Set(),
+      banCore: new Set(), banExtra: new Set(), banOps: new Set(),
+      equipment: new Set(), teammates: new Set(),
+      level: 6, deployLimit: 8, strategy: "",
+      selectedCore: "", selectedExtra: "",
+      customCore: "炎", customExtra: "", customOps: [], savedCustoms: []
+    };
+    Object.keys(over || {}).forEach(function (k) { base[k] = over[k]; });
+    return base;
+  }
+  var out = [];
+
+  var r1 = E.recommend(st({}), 3);
+  out.push("no-filter: " + r1.length + " | " + r1.map(function (x) { return x.comp.name; }).join(", "));
+
+  var r2 = E.recommend(st({ selectedCore: "炎" }), 3);
+  out.push("core-炎: " + r2.length + " | " + r2.map(function (x) { return x.comp.name; }).join(", "));
+
+  var r3 = E.recommend(st({ selectedCore: "炎", selectedExtra: "奥术" }), 3);
+  out.push("炎+奥术: " + r3.length + " | " + r3.map(function (x) { return x.comp.name; }).join(", "));
+
+  var r4 = E.recommend(st({ selectedCore: "乌萨斯", selectedExtra: "精准" }), 3);
+  out.push("乌萨斯+精准(应为0): " + r4.length);
+
+  var r5 = E.recommend(st({ selectedCore: "炎", banCore: new Set(["炎"]) }), 3);
+  out.push("炎+ban炎(应为0): " + r5.length);
+
+  var c4 = { core: "炎", extra: "奥术", ops: ["余", "黍", "夕", "烛煌", "望", "琳琅诗怀雅", "圣聆初雪", "溯光星源"] };
+  var a4 = E.analyzeCustom(c4, st({}));
+  out.push("custom-full: score=" + Math.round(a4.score) + " core=" + a4.coreCount + " extra=" + a4.extraCount +
+    " roles=" + JSON.stringify(a4.roles) + " warnings=" + a4.warnings.map(function (w) { return w.type + ":" + w.text; }).join(" || "));
+
+  var a5 = E.analyzeCustom({ core: "炎", extra: "", ops: [] }, st({}));
+  out.push("custom-empty: score=" + Math.round(a5.score) + " warnings=" + a5.warnings.length);
+
+  var a6 = E.analyzeCustom({ core: "炎", extra: "奥术", ops: ["余", "黍", "夕"] }, st({}));
+  out.push("custom-3: score=" + Math.round(a6.score) + " core=" + a6.coreCount + " extra=" + a6.extraCount +
+    " warnings=" + a6.warnings.map(function (w) { return w.text; }).join(" || "));
+
+  var a7 = E.analyzeCustom(c4, st({ banOps: new Set(["余"]) }));
+  out.push("custom-banned: warnings=" + a7.warnings.map(function (w) { return w.text; }).join(" || "));
+
+  out.push("econ: " + E.econTips(st({})).map(function (t) { return t.text; }).join(" | "));
+
+  var sc = E.shopChance("真言", 6);
+  out.push("shop-真言@6: " + (sc.p * 100).toFixed(2) + "%");
+
+  var info = E.strategyInfo("band_yan");
+  out.push("strategy-info: core=" + info.core + " tags=" + info.tags.join(","));
+
+  var r6 = E.recommend(st({ strategy: "band_yan" }), 3);
+  out.push("strategy-炎: " + r6.length + " | " + r6.map(function (x) {
+    return x.comp.name + "(" + Math.round(x.strategyFit * 100) + "%)";
+  }).join(", "));
+
+  var r7 = E.recommend(st({ selectedCore: "乌萨斯", strategy: "band_yan" }), 3);
+  out.push("乌萨斯+炎策略: " + r7.length + " | " + r7.map(function (x) {
+    return x.comp.name + "(" + Math.round(x.strategyFit * 100) + "%)";
+  }).join(", "));
+
+  var rMech = E.recommend(st({ strategy: "band_mech" }), 3);
+  out.push("strategy-暴躁铁皮: " + rMech.length + " | " + rMech.map(function (x) {
+    return x.comp.name + "(" + Math.round(x.strategyFit * 100) + "%)";
+  }).join(", "));
+
+  var a8 = E.analyzeCustom(c4, st({ strategy: "band_yan" }));
+  out.push("custom-strategy-match: fit=" + Math.round(a8.strategyFit * 100) +
+    " warnings=" + a8.warnings.map(function (w) { return w.text; }).join(" || "));
+
+  var a9 = E.analyzeCustom({ core: "乌萨斯", extra: "奥术", ops: ["折桠", "乌啾", "冻河", "塔露拉", "赫拉格", "怒潮凛冬", "圣聆初雪", "溯光星源"] }, st({ strategy: "band_yan" }));
+  out.push("custom-strategy-mismatch: fit=" + Math.round(a9.strategyFit * 100) +
+    " warnings=" + a9.warnings.map(function (w) { return w.text; }).join(" || "));
+
+  var yanComp = S.comps.filter(function (c) { return c.name === "炎·奥术"; })[0];
+  var pEcon = E.phasePlan(yanComp, E.strategyInfo("band_yan").strategy);
+  var pDeploy = E.phasePlan(yanComp, E.strategyInfo("band_emperor").strategy);
+  var pNone = E.phasePlan(yanComp, null);
+  out.push("phase-经济: " + pEcon.early.slice(0, 80));
+  out.push("phase-部署: " + pDeploy.early.slice(0, 80));
+  out.push("phase-无策略: " + pNone.early.slice(0, 80));
+
+  var dp = S.operators.filter(function (o) { return o.name === "暴躁铁皮"; })[0];
+  out.push("alias: " + (dp ? dp.alias : "missing") + " / obtain=" + (dp ? dp.obtain : ""));
+
+  document.getElementById("out").textContent = out.join("\n");
+</script>
+</body>
+</html>

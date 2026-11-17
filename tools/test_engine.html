@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><title>engine test</title></head>
+<body>
+<pre id="out">running...</pre>
+<script src="../js/data.js"></script>
+<script src="../js/engine.js"></script>
+<script>
+  var S = window.SEASON, E = window.Engine;
+  E.init(S);
+  function st(over) {
+    var base = {
+      mode: "all", owned: new Set(), board: new Set(),
+      banCore: new Set(), banExtra: new Set(), banOps: new Set(),
+      equipment: new Set(), teammates: new Set(),
+      round: 1, level: 1, gold: 4, deployLimit: 8, upgradeCost: 4
+    };
+    Object.keys(over || {}).forEach(function (k) { base[k] = over[k]; });
+    return base;
+  }
+  var cases = [
+    ["start", st({})],
+    ["mid-r6-l4", st({ round: 6, level: 4, gold: 8, board: new Set(["森蚺", "缇缇", "鸿雪"]) })],
+    ["late-r11-l6", st({ round: 11, level: 6, gold: 10, board: new Set(["森蚺", "缇缇", "鸿雪", "佩佩", "真言", "娜仁图亚"]) })],
+    ["ban-sargon", st({ banCore: new Set(["萨尔贡"]) })],
+    ["box-small", st({ mode: "box", owned: new Set(["森蚺", "缇缇"]) })],
+    ["ban-ops", st({ banOps: new Set(["森蚺", "缇缇"]) })]
+  ];
+  var out = [];
+  cases.forEach(function (c) {
+    var r = E.recommend(c[1], 3);
+    out.push("[" + c[0] + "] " + (r.length ? r.map(function (x) {
+      return x.comp.name + ":" + Math.round(x.score) + "(缺" + x.missing.length + ")";
+    }).join(" | ") : "NO RESULT"));
+  });
+  var ch = E.shopChance("真言", 6);
+  out.push("shop 真言@6: " + (ch ? (ch.p * 100).toFixed(2) + "% / slot " + (ch.pSlot * 100).toFixed(3) + "%" : "null"));
+  var ch2 = E.shopChance("森蚺", 6);
+  out.push("shop 森蚺@6: " + (ch2 ? (ch2.p * 100).toFixed(2) + "%" : "null"));
+  document.getElementById("out").textContent = out.join("\n");
+</script>
+</body>
+</html>

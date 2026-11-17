@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><title>dist test</title></head>
+<body>
+<pre id="out">running...</pre>
+<iframe id="app" style="width:1400px;height:900px;border:1px solid #333"></iframe>
+<script>
+  var f = document.getElementById("app");
+
+  function enc(obj) {
+    var bytes = new TextEncoder().encode(JSON.stringify(obj));
+    var bin = "";
+    for (var i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+    return btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  }
+
+  var code = enc({
+    v: 1,
+    c: "炎",
+    e: "奥术",
+    s: "",
+    o: ["大丑", "黍", "夕"],
+    p: { early: "打包站分享的前期", mid: "打包站分享的中期", late: "打包站分享的后期" },
+    l: { "大丑": "坚守盾牌 + 变形同构体 + 炎国短刀" }
+  });
+  f.src = "../dist/index.html#c=" + code;
+
+  function run() {
+    var d = f.contentDocument;
+    var w = f.contentWindow;
+    var out = [];
+    function q(s) { return d.querySelector(s); }
+    var tab = q(".center-tab.active");
+    out.push("distTitle=" + d.title);
+    out.push("tab=" + (tab ? tab.dataset.center : "none"));
+    out.push("count=" + q("#customCount").innerText);
+    var hasTransfer = Array.prototype.some.call(d.querySelectorAll("#customLoadout input"), function (el) {
+      return el.value.indexOf("炎国短刀") >= 0;
+    });
+    out.push("loadoutHasTransfer=" + hasTransfer);
+    out.push("planLen=" + q("#customPhaseEarly").value.length);
+    out.push("favicon=" + !!d.querySelector('link[rel="icon"]'));
+    out.push("comps=" + d.querySelectorAll("#compList .comp-item").length);
+    out.push("errors=" + (q("#jsError") && !q("#jsError").hidden ? q("#jsError").innerText : "none"));
+    try { w.localStorage.removeItem("stronghold-advisor-v1"); } catch (e) { }
+    document.getElementById("out").textContent = out.join("\n");
+  }
+
+  f.onload = function () { setTimeout(run, 500); };
+</script>
+</body>
+</html>

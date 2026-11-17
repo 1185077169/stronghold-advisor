@@ -1,0 +1,82 @@
+白铁 | T4 | core=维多利亚 | extra=助力
+涤火杰西卡 | T4 | core=维多利亚 | extra=坚守
+酒神 | T6 | core=维多利亚 | extra=-
+维娜·维多利亚 | T5 | core=维多利亚 | extra=奇迹
+号角 | T5 | core=维多利亚 | extra=-
+凛御银灰 | T5 | core=谢拉格 | extra=灵巧/投资人
+暴躁铁皮 | T5 | core=- | extra=协防干员
+缪尔赛思 | T6 | core=- | extra=协防干员
+霍尔海雅 | T4 | core=- | extra=奥术/精准
+艾雅法拉 | T4 | core=莱塔尼亚 | extra=奥术
+黑键 | T4 | core=莱塔尼亚 | extra=精准
+灵知 | T4 | core=谢拉格 | extra=迅捷
+锡人 | T2 | core=- | extra=投资人
+林 | T5 | core=炎 | extra=-
+淬羽赫默 | T4 | core=- | extra=助力
+纯烬艾雅法拉 | T5 | core=莱塔尼亚 | extra=聚合/远见
+冻河 | T5 | core=乌萨斯 | extra=迅捷
+塔露拉 | T6 | core=乌萨斯 | extra=奥术/协防干员
+折桠 | T1 | core=乌萨斯 | extra=不屈
+烈夏 | T1 | core=乌萨斯 | extra=-
+乌啾 | T3 | core=乌萨斯 | extra=聚合
+维伊 | T4 | core=乌萨斯 | extra=奥术
+怒潮凛冬 | T5 | core=乌萨斯 | extra=奇迹
+阿米娅 | T5 | core=- | extra=奇迹
+异客 | T4 | core=萨尔贡 | extra=奥术
+莎草 | T2 | core=萨尔贡 | extra=聚合
+佩佩 | T5 | core=萨尔贡 | extra=灵巧
+鸿雪 | T5 | core=萨尔贡 | extra=精准
+至简 | T3 | core=萨尔贡 | extra=-
+森蚺 | T4 | core=萨尔贡 | extra=不屈
+缇缇 | T5 | core=萨尔贡 | extra=-
+卡涅利安 | T3 | core=莱塔尼亚/萨尔贡 | extra=迅捷
+泡泡 | T2 | core=萨尔贡 | extra=坚守
+圣聆初雪 | T5 | core=谢拉格 | extra=奥术
+锏 | T6 | core=卡西米尔/谢拉格/莱塔尼亚 | extra=-
+雪猎 | T2 | core=谢拉格 | extra=精准
+伊芙利特 | T5 | core=- | extra=协防干员
+提丰 | T5 | core=- | extra=协防干员
+耶拉 | T3 | core=谢拉格 | extra=奇迹
+蛇屠箱 | T2 | core=- | extra=坚守
+角峰 | T1 | core=谢拉格 | extra=坚守
+承曦格雷伊 | T2 | core=- | extra=精准/灵巧
+云迹 | T2 | core=- | extra=灵巧/奇迹
+--- EQUIPMENT ---
+简易通讯机 | 2
+博士投影 | 5
+精准狙击镜 | 3
+伊比利亚骨刺刀 | 3
+莱塔尼亚小鼓 | 4
+奥术法阵 | 3
+变形同构体 | 6
+维式重锤 | 1
+加速维式重锤 | 3
+坚守盾牌 | 1
+歌利亚头盔 | 3
+不退者之盾 | 3
+佣兵名牌 | 5
+多功能补剂 | 3
+卫戍推荐信 | 2
+灵巧涡轮手套 | 2
+叙拉古正装 | 3
+聚合急救箱 | 2
+护盾无人机 | 4
+迅捷作战粮 | 3
+源石溶剂 | 1
+萨尔贡浓茶 | 2
+谢拉格不融冰 | 4
+天马之枪 | 6
+天马之盔 | 5
+汲取者之镰 | 6
+汲取者之心 | 6
+汲取者之喙 | 4
+驱逐者警棍 | 4
+驱逐者瓦斯 | 5
+不退者力场 | 5
+电流维式重锤 | 5
+灼燃维式重锤 | 4
+终极维式重锤 | 6
+卡西米尔竞技旗 | 4
+乌萨斯呼吸器 | 3
+炎国短刀 | 3
+阿戈尔重刃 | 3

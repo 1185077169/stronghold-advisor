@@ -1,0 +1,24 @@
+缪尔赛思 | T6 | core=- | extra=协防干员 | stack=null
+号角 | T5 | core=维多利亚 | extra=- | stack=null
+白铁 | T4 | core=维多利亚 | extra=助力 | stack=null
+涤火杰西卡 | T4 | core=维多利亚 | extra=坚守 | stack={"kind": "covenant", "covenants": ["维多利亚", "坚守"], "amount": 2, "cap": null, "perRound": 2, "temporary": false}
+酒神 | T6 | core=维多利亚 | extra=- | stack=null
+维娜·维多利亚 | T5 | core=维多利亚 | extra=奇迹 | stack={"kind": "covenant", "covenants": ["维多利亚", "奇迹"], "amount": 2, "cap": null, "perRound": 2, "temporary": false}
+凛御银灰 | T5 | core=谢拉格 | extra=灵巧/投资人 | stack={"kind": "amplifier", "covenants": ["谢拉格", "灵巧"], "amount": 0, "cap": null, "perRound": 0, "temporary": false, "amplify": {"type": "capPercent", "value": 0.75, "scope": "front"}}
+暴躁铁皮 | T5 | core=- | extra=协防干员 | stack=null
+林 | T5 | core=炎 | extra=- | stack=null
+灵知 | T4 | core=谢拉格 | extra=迅捷 | stack=null
+淬羽赫默 | T4 | core=- | extra=助力 | stack={"kind": "self", "covenants": [], "amount": 1, "cap": null, "perRound": 1, "temporary": false}
+锡人 | T2 | core=- | extra=投资人 | stack={"kind": "once", "covenants": ["投资人"], "amount": 0, "cap": null, "perRound": 0, "temporary": false}
+伊芙利特 | T5 | core=- | extra=协防干员 | stack=null
+提丰 | T5 | core=- | extra=协防干员 | stack=null
+霍尔海雅 | T4 | core=- | extra=奥术/精准 | stack={"kind": "self", "covenants": [], "amount": 4, "cap": 12, "perRound": 9.0, "temporary": false}
+艾雅法拉 | T4 | core=莱塔尼亚 | extra=奥术 | stack=null
+黑键 | T4 | core=莱塔尼亚 | extra=精准 | stack={"kind": "covenant", "covenants": ["莱塔尼亚", "精准"], "amount": 1, "cap": 8, "perRound": 6.0, "temporary": false}
+纯烬艾雅法拉 | T5 | core=莱塔尼亚 | extra=聚合/远见 | stack={"kind": "covenant", "covenants": ["莱塔尼亚", "聚合"], "amount": 2, "cap": 20, "perRound": 15.0, "temporary": false}
+--- extra 调和 ---
+魔王 | T6 | core=- | stack=null
+--- stack 灵巧 ---
+凛御银灰 | T5 | extra=灵巧/投资人 | stack={"kind": "amplifier", "covenants": ["谢拉格", "灵巧"], "amount": 0, "cap": null, "perRound": 0, "temporary": false, "amplify": {"type": "capPercent", "value": 0.75, "scope": "front"}}
+霜叶 | T1 | extra=灵巧 | stack={"kind": "once", "covenants": ["灵巧"], "amount": 0, "cap": null, "perRound": 0, "temporary": false}
+仇白 | T4 | extra=灵巧 | stack={"kind": "once", "covenants": ["炎", "灵巧"], "amount": 0, "cap": null, "perRound": 0, "temporary": false}

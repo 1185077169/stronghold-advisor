@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><title>custom v2 test</title></head>
+<body>
+<pre id="out">running...</pre>
+<iframe id="app" src="../index.html" style="width:1400px;height:900px;border:1px solid #333"></iframe>
+<script>
+  var f = document.getElementById("app");
+
+  function run() {
+    var d = f.contentDocument;
+    var w = f.contentWindow;
+    var out = [];
+    function q(s) { return d.querySelector(s); }
+    function qa(s) { return Array.prototype.slice.call(d.querySelectorAll(s)); }
+    function fire(el, type) { el.dispatchEvent(new w.Event(type, { bubbles: true })); }
+
+    qa(".center-tab").filter(function (b) { return b.dataset.center === "custom"; })[0].click();
+
+    var cs = q("#customCore");
+    cs.value = "炎";
+    fire(cs, "change");
+    var ce = q("#customExtra");
+    ce.value = "奥术";
+    fire(ce, "change");
+
+    q("#customAutoCore").click();
+    out.push("afterCore count=" + q("#customCount").innerText +
+      " stats=" + q("#customStats").innerText.replace(/\n/g, " | "));
+
+    q("#customAutoFlex").click();
+    out.push("afterFlex count=" + q("#customCount").innerText +
+      " stats=" + q("#customStats").innerText.replace(/\n/g, " | "));
+
+    q("#customAutoAll").click();
+    out.push("afterAll count=" + q("#customCount").innerText +
+      " slots=" + q("#customChips").innerText.replace(/\n/g, " ").slice(0, 320));
+    out.push("planPrefilled=" + [q("#customPhaseEarly").value, q("#customPhaseMid").value, q("#customPhaseLate").value]
+      .map(function (v) { return v.length; }).join("/"));
+    q("#customPhaseSuggest").click();
+    out.push("planFirst=" + q("#customPhaseEarly").value.slice(0, 90));
+    var firstLoad = q("#customLoadout input");
+    out.push("loadoutRows=" + qa("#customLoadout .loadout-row").length +
+      " firstEmpty=" + (firstLoad ? !firstLoad.value : "none"));
+    q("#customLoadoutSuggest").click();
+    out.push("refLoadout=" + (q("#customLoadout input") ? q("#customLoadout input").value.slice(0, 110) : ""));
+
+    // 用户自己改：改完后再换策略，不能被自动覆盖
+    q("#customPhaseEarly").value = "我写的前期";
+    fire(q("#customPhaseEarly"), "input");
+    q("#customLoadout input").value = "我写的装备";
+    fire(q("#customLoadout input"), "input");
+    var manualPlan = q("#customPhaseEarly").value;
+    var manualLoad = q("#customLoadout input").value;
+    var strat = q("#customStrategy");
+    var firstStrat = qa("#customStrategy option").filter(function (o) { return o.value; })[0];
+    if (firstStrat) {
+      strat.value = firstStrat.value;
+      fire(strat, "change");
+      out.push("strategy=" + firstStrat.textContent.trim() +
+        " manualPlanPreserved=" + (q("#customPhaseEarly").value === manualPlan) +
+        " manualLoadPreserved=" + (q("#customLoadout input").value === manualLoad));
+    }
+    q("#customPhaseMid").value = "";
+    fire(q("#customPhaseMid"), "input");
+    q("#customPhaseSuggest").click();
+    out.push("fillEmptyKeepsManual=" + (q("#customPhaseEarly").value === "我写的前期") +
+      " midFilled=" + !!q("#customPhaseMid").value +
+      " mid=" + q("#customPhaseMid").value.slice(0, 70));
+
+    var tank = qa("#center-custom [data-cfilter]").filter(function (b) { return b.dataset.cfilter === "tank"; })[0];
+    tank.click();
+    out.push("tank active=" + tank.classList.contains("active") +
+      " candidates=" + qa("#customResults .candidate-item").length +
+      " first=" + q("#customResults .candidate-item").innerText.replace(/\n/g, " "));
+
+    var tier = q("#customTier");
+    tier.value = "6";
+    fire(tier, "change");
+    out.push("tier6 candidates=" + qa("#customResults .candidate-item").length +
+      " first=" + q("#customResults .candidate-item").innerText.replace(/\n/g, " "));
+
+    qa("#center-custom [data-cfilter]").filter(function (b) { return b.dataset.cfilter === "all"; })[0].click();
+    tier.value = "";
+    fire(tier, "change");
+
+    var before = qa("#customChips .slot.filled").length;
+    var first = q("#customResults [data-add-custom]");
+    if (first) first.click();
+    out.push("add filled " + before + " -> " + qa("#customChips .slot.filled").length);
+
+    var x = q("#customChips .slot-x");
+    if (x) x.click();
+    out.push("afterRemove filled=" + qa("#customChips .slot.filled").length);
+
+    q("#customSave").click();
+    out.push("saved=" + q("#savedCustoms").innerText.replace(/\n/g, " | ").slice(0, 220));
+    var stored = {};
+    try { stored = JSON.parse(w.localStorage.getItem("stronghold-advisor-v1") || "{}"); } catch (e) { }
+    var firstSaved = stored.savedCustoms && stored.savedCustoms[0];
+    out.push("savedPhases=" + (firstSaved && firstSaved.phases ? firstSaved.phases.early : "none") +
+      " savedLoadoutKeys=" + (firstSaved && firstSaved.loadout ? Object.keys(firstSaved.loadout).length : "none"));
+
+    q("#customClearTop").click();
+    out.push("afterClear count=" + q("#customCount").innerText +
+      " plan=" + q("#customPhaseEarly").value +
+      " loadoutRows=" + qa("#customLoadout .loadout-row").length);
+
+    // 转职参考：炎核心 + 非炎的大丑，应提示「变形同构体 + 炎国短刀」转炎
+    q("#customSearch").value = "大丑";
+    fire(q("#customSearch"), "input");
+    var addBig = q("#customResults [data-add-custom]");
+    out.push("bigUglyCandidate=" + (addBig ? addBig.innerText.replace(/\n/g, " ") : "none"));
+    if (addBig) addBig.click();
+    out.push("bigUglyBlank=" + (q("#customLoadout input") ? q("#customLoadout input").value === "" : "none"));
+    q("#customLoadoutSuggest").click();
+    out.push("transfer=" + (q("#customLoadout input") ? q("#customLoadout input").value.slice(0, 200) : ""));
+
+    try { w.localStorage.removeItem("stronghold-advisor-v1"); } catch (e) { }
+    document.getElementById("out").textContent = out.join("\n");
+  }
+
+  if (f.contentDocument && f.contentDocument.readyState === "complete") {
+    setTimeout(run, 300);
+  } else {
+    f.onload = function () { setTimeout(run, 300); };
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,529 @@
+SEASON: act3autochess/V3_1
+OPS: 217 PROFILES: 217
+CORE: 乌萨斯, 伊比利亚, 卡西米尔, 叙拉古, 炎, 维多利亚, 莱塔尼亚, 萨尔贡, 谢拉格, 阿戈尔
+EXTRA: 不屈, 助力, 协防干员, 坚守, 奇迹, 奥术, 投资人, 灵巧, 独行, 突袭, 精准, 绝技, 聚合, 调和, 迅捷, 远见
+
+## 乌萨斯 (13)
+  T6 塔露拉 | extra=奥术,协防干员 | role= | stack={'kind': 'amplifier', 'covenants': ['乌萨斯'], 'amount': 0, 'cap': None, 'perRound': 0, 'temporary': False, 'amplify': {'type': 'tempBoost', 'value': 4, 'scope': 'around'}}
+  T5 冻河 | extra=迅捷 | role= | stack={'kind': 'covenant', 'covenants': ['乌萨斯', '迅捷'], 'amount': 1, 'cap': 16, 'perRound': 12.0, 'temporary': False}
+  T5 国度 | extra= | role= | stack=None
+  T5 怒潮凛冬 | extra=奇迹 | role= | stack=None
+  T5 早露 | extra= | role= | stack=None
+  T5 电弧 | extra= | role= | stack=None
+  T4 维伊 | extra=奥术 | role= | stack=None
+  T4 赫拉格 | extra=突袭 | role= | stack={'kind': 'covenant', 'covenants': ['乌萨斯', '突袭'], 'amount': 4, 'cap': 12, 'perRound': 9.0, 'temporary': False}
+  T3 乌啾 | extra=聚合 | role=奶位 | stack={'kind': 'covenant', 'covenants': ['乌萨斯'], 'amount': 1, 'cap': None, 'perRound': 5, 'temporary': False}
+  T3 奥尔佳 | extra=灵巧 | role= | stack=None
+  T2 真理 | extra= | role= | stack=None
+  T1 折桠 | extra=不屈 | role=盾位 | stack={'kind': 'covenant', 'covenants': ['乌萨斯'], 'amount': 2, 'cap': None, 'perRound': 2, 'temporary': False}
+  T1 烈夏 | extra= | role= | stack={'kind': 'covenant', 'covenants': ['乌萨斯'], 'amount': 4, 'cap': None, 'perRound': 4, 'temporary': True}
+
+## 伊比利亚 (10)
+  T6 引星棘刺 | extra=迅捷 | role= | stack={'kind': 'covenant', 'covenants': ['伊比利亚', '迅捷'], 'amount': 12, 'cap': None, 'perRound': 12, 'temporary': False}
+  T5 棘刺 | extra=奥术 | role= | stack={'kind': 'covenant', 'covenants': ['伊比利亚'], 'amount': 12, 'cap': 12, 'perRound': 9.0, 'temporary': False}
+  T5 艾丽妮 | extra= | role= | stack=None
+  T4 流明 | extra=聚合 | role=奶位 | stack={'kind': 'covenant', 'covenants': ['伊比利亚', '聚合'], 'amount': 1, 'cap': None, 'perRound': 1, 'temporary': False}
+  T4 温蒂 | extra=坚守 | role= | stack=None
+  T3 旅骨 | extra=精准 | role= | stack={'kind': 'adjacent', 'covenants': [], 'amount': 3, 'cap': None, 'perRound': 3, 'temporary': False}
+  T3 海沫 | extra=不屈 | role= | stack=None
+  T2 瑰盐 | extra=聚合 | role=奶位 | stack=None
+  T2 蓝毒 | extra= | role= | stack=None
+  T1 深靛 | extra= | role= | stack={'kind': 'covenant', 'covenants': ['伊比利亚'], 'amount': 2, 'cap': None, 'perRound': 2, 'temporary': False}
+
+## 卡西米尔 (10)
+  T6 耀骑士临光 | extra=突袭 | role= | stack={'kind': 'covenant', 'covenants': ['卡西米尔', '突袭'], 'amount': 6, 'cap': 12, 'perRound': 9.0, 'temporary': False}
+  T6 锏 | extra= | role= | stack=None
+  T5 焰尾 | extra=迅捷 | role= | stack={'kind': 'covenant', 'covenants': ['卡西米尔', '迅捷'], 'amount': 1, 'cap': None, 'perRound': 1, 'temporary': False}
+  T5 薇薇安娜 | extra=奥术 | role= | stack={'kind': 'amplifier', 'covenants': [], 'amount': 0, 'cap': None, 'perRound': 0, 'temporary': False, 'amplify': {'type': 'capFlat', 'value': 7, 'scope': 'sameCovenant'}}
+  T4 玛恩纳 | extra= | role= | stack=None
+  T4 远牙 | extra=精准 | role= | stack=None
+  T3 历阵锐枪芬 | extra=远见 | role= | stack=None
+  T3 瑕光 | extra=突袭 | role=盾位,奶位 | stack={'kind': 'self', 'covenants': [], 'amount': 3, 'cap': 9, 'perRound': 6.75, 'temporary': False}
+  T2 砾 | extra=不屈 | role= | stack={'kind': 'covenant', 'covenants': ['卡西米尔', '不屈'], 'amount': 2, 'cap': 12, 'perRound': 9.0, 'temporary': False}
+  T1 野鬃 | extra=助力 | role= | stack={'kind': 'covenant', 'covenants': ['卡西米尔'], 'amount': 1, 'cap': 2, 'perRound': 1.5, 'temporary': False}
+
+## 叙拉古 (13)
+  T6 荒芜拉普兰德 | extra= | role= | stack={'kind': 'covenant', 'covenants': ['叙拉古'], 'amount': 2, 'cap': 20, 'perRound': 15.0, 'temporary': False}
+  T5 予愿安洁莉娜 | extra= | role= | stack=None
+  T5 弑君者 | extra= | role= | stack=None
+  T5 缄默德克萨斯 | extra= | role= | stack=None
+  T5 贝洛内 | extra=突袭 | role= | stack=None
+  T5 铃兰 | extra= | role= | stack=None
+  T4 安洁莉娜 | extra=奇迹 | role= | stack={'kind': 'covenant', 'covenants': ['叙拉古', '奇迹'], 'amount': 2, 'cap': 8, 'perRound': 6.0, 'temporary': False}
+  T4 斥罪 | extra=不屈 | role=盾位 | stack=None
+  T3 伺夜 | extra=精准 | role= | stack=None
+  T3 忍冬 | extra=迅捷 | role= | stack=None
+  T2 复奏 | extra=奇迹 | role= | stack={'kind': 'covenant', 'covenants': ['莱塔尼亚', '叙拉古'], 'amount': 2, 'cap': None, 'perRound': 2, 'temporary': False}
+  T2 奥斯塔 | extra= | role= | stack=None
+  T1 拉普兰德 | extra= | role= | stack={'kind': 'once', 'covenants': ['叙拉古'], 'amount': 0, 'cap': None, 'perRound': 0, 'temporary': False}
+
+## 炎 (25)
+  T6 夕 | extra=奥术 | role= | stack={'kind': 'covenant', 'covenants': ['炎', '奥术'], 'amount': 2, 'cap': 24, 'perRound': 18.0, 'temporary': False}
+  T6 烛煌 | extra=迅捷 | role= | stack={'kind': 'covenant', 'covenants': ['炎', '维多利亚'], 'amount': 1, 'cap': 12, 'perRound': 9.0, 'temporary': False}
+  T5 令 | extra= | role= | stack=None
+  T5 假日威龙陈 | extra= | role= | stack=None
+  T5 司霆惊蛰 | extra= | role= | stack=None
+  T5 左乐 | extra= | role= | stack=None
+  T5 年 | extra= | role=盾位 | stack=None
+  T5 斩业星熊 | extra= | role=盾位 | stack=None
+  T5 星熊 | extra= | role=盾位 | stack=None
+  T5 望 | extra= | role= | stack=None
+  T5 林 | extra= | role= | stack=None
+  T5 煌 | extra= | role= | stack=None
+  T5 琳琅诗怀雅 | extra= | role= | stack=None
+  T5 老鲤 | extra=投资人 | role= | stack=None
+  T5 赤刃明霄陈 | extra= | role= | stack=None
+  T5 重岳 | extra= | role= | stack=None
+  T5 阿 | extra= | role= | stack=None
+  T5 陈 | extra= | role= | stack=None
+  T5 黍 | extra=远见 | role=盾位,奶位 | stack={'kind': 'once', 'covenants': ['炎', '远见'], 'amount': 0, 'cap': None, 'perRound': 0, 'temporary': False}
+  T4 仇白 | extra=灵巧 | role= | stack={'kind': 'once', 'covenants': ['炎', '灵巧'], 'amount': 0, 'cap': None, 'perRound': 0, 'temporary': False}
+  T4 余 | extra=坚守 | role=盾位 | stack={'kind': 'self', 'covenants': [], 'amount': 1, 'cap': 8, 'perRound': 6.0, 'temporary': False}
+  T3 乌有 | extra= | role= | stack=None
+  T3 风絮 | extra=聚合 | role=奶位 | stack={'kind': 'covenant', 'covenants': ['炎', '聚合'], 'amount': 2, 'cap': 16, 'perRound': 12.0, 'temporary': False}
+  T2 矩 | extra= | role= | stack={'kind': 'once', 'covenants': ['炎'], 'amount': 0, 'cap': None, 'perRound': 0, 'temporary': False}
+  T1 拜松 | extra= | role=盾位 | stack={'kind': 'once', 'covenants': ['炎'], 'amount': 0, 'cap': None, 'perRound': 0, 'temporary': False}
+
+## 维多利亚 (16)
+  T6 烛煌 | extra=迅捷 | role= | stack={'kind': 'covenant', 'covenants': ['炎', '维多利亚'], 'amount': 1, 'cap': 12, 'perRound': 9.0, 'temporary': False}
+  T6 酒神 | extra= | role= | stack=None
+  T5 傀影 | extra= | role= | stack=None
+  T5 号角 | extra= | role=盾位 | stack=None
+  T5 推进之王 | extra= | role= | stack=None
+  T5 澄闪 | extra= | role= | stack=None
+  T5 琴柳 | extra= | role= | stack=None
+  T5 维娜·维多利亚 | extra=奇迹 | role= | stack={'kind': 'covenant', 'covenants': ['维多利亚', '奇迹'], 'amount': 2, 'cap': None, 'perRound': 2, 'temporary': False}
+  T5 风笛 | extra= | role= | stack=None
+  T4 涤火杰西卡 | extra=坚守 | role=盾位 | stack={'kind': 'covenant', 'covenants': ['维多利亚', '坚守'], 'amount': 2, 'cap': None, 'perRound': 2, 'temporary': False}
+  T4 白铁 | extra=助力 | role= | stack=None
+  T3 凯瑟琳 | extra=远见 | role= | stack=None
+  T3 水灯心 | extra=独行,灵巧 | role= | stack=None
+  T2 Miss.Christine | extra=奥术 | role= | stack={'kind': 'covenant', 'covenants': ['维多利亚', '奥术'], 'amount': 3, 'cap': None, 'perRound': 3, 'temporary': False}
+  T2 哈洛德 | extra= | role=奶位 | stack=None
+  T1 慕斯 | extra= | role= | stack={'kind': 'covenant', 'covenants': ['维多利亚'], 'amount': 1, 'cap': None, 'perRound': 1, 'temporary': False}
+
+## 莱塔尼亚 (11)
+  T6 锏 | extra= | role= | stack=None
+  T5 止颂 | extra= | role= | stack=None
+  T5 纯烬艾雅法拉 | extra=聚合,远见 | role=奶位 | stack={'kind': 'covenant', 'covenants': ['莱塔尼亚', '聚合'], 'amount': 2, 'cap': 20, 'perRound': 15.0, 'temporary': False}
+  T5 薇薇安娜 | extra=奥术 | role= | stack={'kind': 'amplifier', 'covenants': [], 'amount': 0, 'cap': None, 'perRound': 0, 'temporary': False, 'amplify': {'type': 'capFlat', 'value': 7, 'scope': 'sameCovenant'}}
+  T4 艾雅法拉 | extra=奥术 | role= | stack=None
+  T4 黑键 | extra=精准 | role= | stack={'kind': 'covenant', 'covenants': ['莱塔尼亚', '精准'], 'amount': 1, 'cap': 8, 'perRound': 6.0, 'temporary': False}
+  T3 卡涅利安 | extra=迅捷 | role= | stack=None
+  T3 车尔尼 | extra=坚守 | role=盾位 | stack=None
+  T2 复奏 | extra=奇迹 | role= | stack={'kind': 'covenant', 'covenants': ['莱塔尼亚', '叙拉古'], 'amount': 2, 'cap': None, 'perRound': 2, 'temporary': False}
+  T2 折光 | extra= | role= | stack={'kind': 'covenant', 'covenants': ['莱塔尼亚'], 'amount': 4, 'cap': None, 'perRound': 4, 'temporary': False}
+  T1 地灵 | extra=独行 | role= | stack={'kind': 'covenant', 'covenants': ['莱塔尼亚'], 'amount': 1, 'cap': 1, 'perRound': 0.75, 'temporary': False}
+
+## 萨尔贡 (13)
+  T6 真言 | extra= | role= | stack=None
+  T5 佩佩 | extra=灵巧 | role= | stack={'kind': 'adjacent', 'covenants': [], 'amount': 1, 'cap': 9, 'perRound': 6.75, 'temporary': False}
+  T5 娜仁图亚 | extra= | role= | stack=None
+  T5 百炼嘉维尔 | extra= | role= | stack=None
+  T5 缇缇 | extra= | role=奶位 | stack=None
+  T5 鸿雪 | extra=精准 | role= | stack={'kind': 'covenant', 'covenants': ['萨尔贡', '精准'], 'amount': 4, 'cap': 16, 'perRound': 12.0, 'temporary': False}
+  T4 异客 | extra=奥术 | role= | stack=None
+  T4 森蚺 | extra=不屈 | role=盾位 | stack={'kind': 'covenant', 'covenants': ['萨尔贡', '不屈'], 'amount': 4, 'cap': 12, 'perRound': 9.0, 'temporary': False}
+  T3 卡涅利安 | extra=迅捷 | role= | stack=None
+  T3 至简 | extra= | role= | stack=None
+  T2 泡泡 | extra=坚守 | role=盾位 | stack={'kind': 'covenant', 'covenants': ['萨尔贡', '坚守'], 'amount': 2, 'cap': 4, 'perRound': 3.0, 'temporary': False}
+  T2 莎草 | extra=聚合 | role=奶位 | stack=None
+  T1 艾丝黛尔 | extra=独行 | role= | stack={'kind': 'covenant', 'covenants': ['萨尔贡'], 'amount': 1, 'cap': 2, 'perRound': 1.5, 'temporary': False}
+
+## 谢拉格 (11)
+  T6 锏 | extra= | role= | stack=None
+  T5 凛御银灰 | extra=灵巧,投资人 | role= | stack={'kind': 'amplifier', 'covenants': ['谢拉格', '灵巧'], 'amount': 0, 'cap': None, 'perRound': 0, 'temporary': False, 'amplify': {'type': 'capPercent', 'value': 0.75, 'scope': 'front'}}
+  T5 圣聆初雪 | extra=奥术 | role= | stack={'kind': 'covenant', 'covenants': ['谢拉格'], 'amount': 1, 'cap': 24, 'perRound': 18.0, 'temporary': False}
+  T5 银灰 | extra= | role= | stack=None
+  T4 灵知 | extra=迅捷 | role= | stack=None
+  T3 初雪 | extra=协防干员 | role= | stack={'kind': 'covenant', 'covenants': ['谢拉格'], 'amount': 1, 'cap': 16, 'perRound': 12.0, 'temporary': False}
+  T3 极光 | extra= | role=盾位 | stack={'kind': 'once', 'covenants': ['谢拉格'], 'amount': 0, 'cap': None, 'perRound': 0, 'temporary': False}
+  T3 耶拉 | extra=奇迹 | role= | stack=None
+  T2 哈洛德 | extra= | role=奶位 | stack=None
+  T2 雪猎 | extra=精准 | role= | stack={'kind': 'once', 'covenants': ['谢拉格', '精准'], 'amount': 0, 'cap': None, 'perRound': 0, 'temporary': False}
+  T1 角峰 | extra=坚守 | role=盾位 | stack=None
+
+## 阿戈尔 (10)
+  T6 克莱门莎 | extra= | role= | stack=None
+  T6 浊心斯卡蒂 | extra=聚合 | role=奶位 | stack={'kind': 'covenant', 'covenants': ['阿戈尔'], 'amount': 2, 'cap': 20, 'perRound': 15.0, 'temporary': False}
+  T5 乌尔比安 | extra= | role= | stack=None
+  T5 歌蕾蒂娅 | extra= | role= | stack=None
+  T4 归溟幽灵鲨 | extra=不屈 | role= | stack=None
+  T4 水月 | extra=灵巧 | role= | stack=None
+  T3 斯卡蒂 | extra=突袭 | role= | stack={'kind': 'covenant', 'covenants': ['阿戈尔'], 'amount': 4, 'cap': 8, 'perRound': 6.0, 'temporary': False}
+  T3 深巡 | extra=坚守 | role=盾位 | stack=None
+  T2 安哲拉 | extra=助力 | role= | stack={'kind': 'covenant', 'covenants': ['阿戈尔', '助力'], 'amount': 3, 'cap': 9, 'perRound': 6.75, 'temporary': False}
+  T1 幽灵鲨 | extra= | role= | stack={'kind': 'covenant', 'covenants': ['阿戈尔'], 'amount': 1, 'cap': 1, 'perRound': 0.75, 'temporary': False}
+
+## EQUIPMENT
+  T1 坚守盾牌 | 防御力+20% | elite: 防御力+35%
+  T1 源石溶剂 | 携带者每秒流失60点生命值，攻击力+40% | elite: 携带者每秒流失60点生命值，攻击力+60%
+  T1 盟约之币 | 装备时销毁，并获得1资金 | elite: 装备时销毁，并获得2资金
+  T1 维式重锤 | 攻击力+15% | elite: 攻击力+25%
+  T1 虹彩活血饮料 | 携带者无法被治疗，每秒回复75点生命值 | elite: 携带者无法被治疗，每秒回复150点生命值
+  T1 随身身份牌 | 装备时销毁，并使携带者所属盟约层数+3（无需激活盟约） | elite: 装备时销毁，并使携带者所属盟约层数+6（无需激活盟约）
+  T1 雪祀之衣 | 生命上限+15%，使携带者更不容易受到攻击且阻挡数-1 | elite: 生命上限+25%，使携带者更不容易受到攻击且阻挡数-1
+  T2 不屈弹射器 | 再部署时间-30%，生命上限-30% | elite: 再部署时间-50%，生命上限-30%
+  T2 卫戍推荐信 | 休整期结束时，使携带者所属的已激活盟约层数+1 | elite: 休整期结束时，使携带者所属的已激活盟约层数+2
+  T2 战栗维式重锤 | 攻击力+20%；若携带者是地面干员则攻击时有10%概率使目标战栗2秒 | elite: 攻击力+35%；若携带者是地面干员则攻击时有10%概率使目标战栗2秒
+  T2 灵巧涡轮手套 | 部署后每秒攻击速度+2（最多叠加20次），受到伤害时失去该效果 | elite: 部署后每秒攻击速度+3（最多叠加20次），受到伤害时失去该效果
+  T2 简易通讯机 | 装备时销毁，随机获得1名拥有该干员第一盟约的干员 | elite: 装备时销毁，随机获得2名拥有该干员第一盟约的干员
+  T2 精打细算玩偶 | 装备时销毁，之后每回合开始时额外获得1资金 | elite: 装备时销毁，之后每回合开始时额外获得2资金
+  T2 紧急调度券 | 装备时销毁，随机获取当前调度中心内的1名干员（调度中心中对应干员消失） | elite: 装备时销毁，随机获取当前调度中心内的2名干员（调度中心中对应干员消失）
+  T2 聚合急救箱 | 攻击范围内每个友方干员首次生命值低于50%时，立刻治疗其35%最大生命值 | elite: 攻击范围内每个友方干员首次生命值低于50%时，立刻治疗其50%最大生命值
+  T2 萨尔贡浓茶 | 技力自然回复速度+0.15/秒 | elite: 技力自然回复速度+0.25/秒
+  T2 见钱眼开玩偶 | 装备时销毁，下回合额外获得2资金 | elite: 装备时销毁，下回合额外获得4资金
+  T3 不退者之盾 | 免疫晕眩、冻结等特殊状态，若与“不退者力场”同时持有则组合为“不退者卫护系统” | elite: 
+  T3 乌萨斯呼吸器 | 阻挡数+1，攻击力+20%，每次再部署时上述加成效果叠加（最多叠加2次） | elite: 阻挡数+1，攻击力+30%，每次再部署时上述加成效果叠加（最多叠加3次）
+  T3 伊比利亚骨刺刀 | 携带者每次造成伤害时，额外造成1次相当于自身攻击力25%的法术伤害 | elite: 携带者每次造成伤害时，额外造成2次相当于自身攻击力25%的法术伤害
+  T3 加速维式重锤 | 攻击力+25%；攻击速度+30 | elite: 攻击力+45%；攻击速度+30
+  T3 叙拉古正装 | 攻击速度+15，携带者部署方向左右两侧的我方干员攻击速度+10 | elite: 攻击速度+25，携带者部署方向左右两侧的我方干员攻击速度+15
+  T3 坚固维式重锤 | 攻击力+25%；首次受到致命伤害时生命值不低于1，持续8秒 | elite: 攻击力+45%；首次受到致命伤害时生命值不低于1，持续8秒
+  T3 多功能补剂 | 携带者每次造成伤害时，自身所属已激活盟约临时层数+1（每场战斗最多叠加12层） | elite: 携带者每次造成伤害时，自身所属已激活盟约临时层数+2（每场战斗最多叠加24层）
+  T3 奥术法阵 | 法术抗性+20，攻击使目标失去特殊能力5秒 | elite: 法术抗性+30，攻击使目标失去特殊能力5秒
+  T3 定期存折 | 装备时销毁，获得{showtag_value_1}资金（持有时每回合+1） | elite: 
+  T3 歌利亚头盔 | 生命上限+25%；部署时若身前一格没有其他干员，生命上限额外+15% | elite: 生命上限+45%；部署时若身前一格没有其他干员，生命上限额外+25%
+  T3 炎国短刀 | 每开启一次技能，获得5%的攻击力加成（最多叠加10次） | elite: 每开启一次技能，获得8%的攻击力加成（最多叠加10次）
+  T3 突袭手雷 | 每次部署后的10秒内，攻击时使目标晕眩2秒 | elite: 每次部署后的15秒内，攻击时使目标晕眩2秒
+  T3 精准狙击镜 | 攻击距离自身3格及以上的目标时，伤害提高30% | elite: 攻击距离自身3格及以上的目标时，伤害提高50%
+  T3 迅捷作战粮 | 部署时，获得3点技力；每有一个同盟约的其他干员，额外获得3点技力 | elite: 部署时，获得6点技力；每有一个同盟约的其他干员，额外获得6点技力
+  T3 阿戈尔重刃 | 攻击力+40%，攻击速度-10 | elite: 攻击力+60%，攻击速度-10
+  T3 驮兽储蓄罐 | 装备时销毁，并随机获得1~6资金 | elite: 装备时销毁，并随机获得2~12资金
+  T4 M3茧甲 | 战斗阶段被击倒时立刻复活（一场战斗仅1次） | elite: 战斗阶段被击倒时立刻复活（一场战斗仅2次）
+  T4 一次性促销券 | 装备时销毁，在调度中心出现3件装备，免费获取其中1件（不高于当前调度中心等级） | elite: 装备时销毁，在调度中心出现6件装备，免费获取其中2件（不高于当前调度中心等级）
+  T4 伪装服 | 首次受到伤害后获得隐匿，持续15秒 | elite: 首次受到伤害后获得隐匿，持续25秒
+  T4 动能单手弩 | 造成伤害时有30%概率使该次攻击力提升至130%；若与“动能加速器”同时持有则组合为“动能轰击弩” | elite: 
+  T4 卡西米尔竞技旗 | 部署后15秒内造成的伤害提升至135%，随后逐渐衰减 | elite: 部署后15秒内造成的伤害提升至160%，随后逐渐衰减
+  T4 可靠怀表 | 携带者技能开启所需技力-20%，但技能期间攻击速度-25% | elite: 携带者技能开启所需技力-40%，但技能期间攻击速度-25%
+  T4 寻呼模块 | 装备时销毁，在调度中心出现至多3名拥有该干员第一盟约的干员，免费获取其中1名（不高于当前调度中心等级） | elite: 
+  T4 护盾无人机 | 治疗时有10%概率使目标获得1层护盾（最多1层） | elite: 治疗时有15%概率使目标获得1层护盾（最多1层）
+  T4 汲取者之喙 | 每次造成伤害时回复相当于造成伤害5%的生命值；若与“汲取者之心”同时持有则组合为“汲取者之镰” | elite: 
+  T4 灼燃维式重锤 | 攻击力+30%；造成法术伤害时附带相当于10%伤害的灼燃损伤 | elite: 攻击力+50%；造成法术伤害时附带相当于10%伤害的灼燃损伤
+  T4 莱塔尼亚小鼓 | 携带者攻击范围内每次有单位被击倒时回复2技力 | elite: 携带者攻击范围内每次有单位被击倒时回复4技力
+  T4 蜂鸣器 | 更容易受到攻击，生命上限+40% | elite: 更容易受到攻击，生命上限+60%
+  T4 谢拉格不融冰 | 造成伤害时有12%概率对目标施加1.5秒的寒冷 | elite: 造成伤害时有20%概率对目标施加1.5秒的寒冷
+  T4 驱逐者警棍 | 携带者对受到晕眩、冻结、恐惧等异常效果影响的敌人造成的伤害提升30%，若与“驱逐者瓦斯”同时持有则组合为“驱逐者防暴装备” | elite: 
+  T5 不退者力场 | 阻挡数+2，每阻挡一个单位自身生命上限和防御力提升20%，若与“不退者之盾”同时持有则组合为“不退者卫护系统” | elite: 
+  T5 人事部记录 | 装备时销毁，立刻特殊刷新1次调度中心，优先出现拥有该干员第一盟约的干员（不高于当前调度中心等级） | elite: 
+  T5 佣兵名牌 | 每有一种激活的盟约，使携带者攻击力+6%、生命上限+6%（最多叠加8次） | elite: 每有一种激活的盟约，使携带者攻击力+12%、生命上限+12%（最多叠加8次）
+  T5 信标 | 装备时目标干员和本装备销毁，在调度中心出现2名与目标干员同等阶的干员，免费获取其中1名
+若在同盟模拟中且存在其他队友，下个休整期向相应盟约人数最多的队友发送1个原干员
+相应盟约人数相同则随机发送
+无法装备给自编干员 | elite: 
+  T5 博士投影 | 装备后下个回合开始时销毁，并使该干员晋升为精锐干员 | elite: 装备时销毁，立即使该干员晋升为精锐干员
+  T5 双模机械臂 | 攻击力+30%，自身造成物理和法术伤害时，伤害类型转化为弱点伤害 | elite: 攻击力+50%，自身造成物理和法术伤害时，伤害类型转化为弱点伤害
+  T5 天马之盔 | 生命上限+60%，若与“天马之枪”同时持有则组合为“天马之耀” | elite: 
+  T5 投机骰子 | 装备时销毁，从3个指令中选择1个替换当前指令 | elite: 
+  T5 拟态物质 | 装备时销毁，若已拥有至少2名该初始干员，则再获得1名该初始干员；否则随机获得1名同阶干员 | elite: 
+  T5 瓶装烈性反应 | 携带者对处于元素爆发状态的敌人造成的伤害额外增加30% | elite: 携带者对处于元素爆发状态的敌人造成的伤害额外增加50%
+  T5 电流维式重锤 | 攻击力+30%；造成伤害时有5%概率使目标获得1层麻痹，且对麻痹的敌人造成伤害时无视其30%防御和法术抗性 | elite: 攻击力+50%；造成伤害时有5%概率使目标获得1层麻痹，且对麻痹的敌人造成伤害时无视其30%防御和法术抗性
+  T5 驱逐者瓦斯 | 携带者攻击范围内的敌人受到的晕眩、冻结、恐惧等异常状态影响时间提高100%，若与“驱逐者警棍”同时持有则组合为“驱逐者防暴装备” | elite: 
+  T6 不退者卫护系统 | 免疫晕眩、冻结等特殊状态，阻挡数+2，每阻挡一个单位自身生命上限和防御力提升20%；携带者开启技能时对自身周围范围内敌人产生一次诱导，持续3秒 | elite: 
+  T6 人事部文档 | 装备时销毁，最大可部署人数变为9 | elite: 
+  T6 动能加速器 | 每次攻击或治疗时攻击速度+2（最高60层）；若与“动能单手弩”同时持有则组合为“动能轰击弩” | elite: 
+  T6 动能轰击弩 | 造成伤害时有30%概率使攻击力提升至130%；每次攻击后攻击速度+2（最高60层），攻击速度叠加达到上限后每次攻击时有30%概率对攻击范围内随机敌人造成自身攻击力100%的范围物理伤害 | elite: 
+  T6 变形同构体 | 携带者获得额外盟约（由另一件携带装备而定）
+具体对应关系可在模拟中查看本装备天赋栏 | elite: 
+  T6 天马之枪 | 攻击力+50%，若与“天马之盔”同时持有则组合为“天马之耀” | elite: 
+  T6 天马之耀 | 生命上限+60%，每秒恢复8%最大生命值；攻击力+50%，造成伤害时额外造成攻击力30%真实伤害 | elite: 
+  T6 汲取者之心 | 攻击力+30%，攻击速度+30，每秒流失1%最大生命值（不会降至0）；若与“汲取者之喙”同时持有则组合为“汲取者之镰” | elite: 
+  T6 汲取者之镰 | 攻击力+30%，攻击速度+30，每秒流失1%最大生命值（不会降至0），每次造成伤害时回复相当于造成伤害5%的生命值；携带者处于技能期间时上述效果翻倍且自身无法被治疗 | elite: 
+  T6 终极维式重锤 | 携带者获得当前场上所有维式重锤特殊效果，且每有一种带有特殊效果的维式重锤自身攻击力额外+20% | elite: 
+  T6 驱逐者防暴装备 | 携带者攻击范围内的敌人受到的晕眩、冻结、恐惧等异常状态影响时间提高100%，且对受这类异常状态影响的敌人造成伤害提升30%；携带者处于技能期间时，每次施加这类异常状态时有50%概率将其传递给附近另一名敌人 | elite: 
+
+## STRATEGIES
+  band_amiya | 众志合一 | initiator=阿米娅 | HP=25 | 被动效果：场上存在3、4或5种以上激活盟约时，所有干员攻击力、生命上限分别+20%/30%/40%
+  band_sarkazb | 坚不可摧 | initiator=歌利亚 | HP=40 | 被动效果：初始目标生命值为40点
+  band_emperor | 加急调派 | initiator=大帝 | HP=26 | 被动效果：我方干员每次部署后都会使自身在本场战斗内的再部署时间-50%
+  band_qalaisa | 食腐之蝶 | initiator=卡莱莎 | HP=26 | 被动效果：我方干员被击倒时，场上剩余我方单位攻击力+20%（最大+200%，持续至被击倒或战斗结束）
+  band_ioleta | 统御号令 | initiator=伊奥莱塔·罗素 | HP=29 | 被动效果：战斗开始时，场上每有1名精锐干员，精锐干员的攻击力、生命上限+10%
+  band_survive | 意志鼓舞 | initiator=百炼嘉维尔 | HP=27 | 拖拽使用（消耗0）：选择一名我方干员，下次战斗开始时立即击倒并复活，并获得额外2次复活次数
+  band_price | 内部货源 | initiator=天空盒 | HP=28 | 点击使用（消耗0）：下一件购买的装备价格-1（最多减至0）
+  band_transfer | 纸片替身 | initiator=风丸 | HP=25 | 拖拽使用（消耗0）：选择一名调度中心内的干员，使其变为相同等阶的随机干员（每回合限2次）
+  band_dance | 溃心领域 | initiator=妮芙 | HP=28 | 拖拽使用（消耗0）：选择一个可用地块，战斗开始后首次经过该地块的敌人获得恐惧，持续3秒（每回合限1次）
+第4、8、12回合时升级，增加使用次数
+  band_copy | 幻画为真 | initiator=夕 | HP=28 | 拖拽使用（消耗0）：选择一名我方干员，获得他的复制体，包括精锐状态和携带的装备（每场模拟限1次）
+  band_jenga | 条文修正 | initiator=但书 | HP=26 | 第4回合解锁
+拖拽使用（消耗0）：选择一名我方干员，使该干员已激活的所有盟约层数+9（冷却3回合）
+  band_evolve | 全场聚焦 | initiator=大嘴莫布 | HP=26 | 拖拽使用（消耗1）：选择一名我方干员，下次战斗开始时变为精锐干员，持续至战斗结束
+  band_jesica | 集结指示 | initiator=杰西卡 | HP=22 | 被动效果：在第4、7、10、13回合进入休整期时获得1个<寻呼模块>
+<寻呼模块>：装备时销毁，在调度中心出现至多3名拥有该干员第一盟约的其他干员，免费获取其中1名（等阶不高于当前调度中心）
+  band_takecare | 重点监护 | initiator=华法琳 | HP=24 | 被动效果：战斗开始时，使场上每个不同等阶的1个随机我方干员所属的已激活盟约层数+1
+调度中心等级达到3级、5级时升级使盟约层数额外+1
+  band_shield | 药枚实验 | initiator=桑葚 | HP=24 | 拖拽使用（消耗0）：选择一名我方干员，在下次战斗开始时获得效果：每次攻击时有20%的概率获得1层护盾（最多1层）
+第7回合时效果升级
+  band_smith | 全力熔铸 | initiator=奥达 | HP=26 | 被动效果：在第3、6、9、12、14回合进入休整期时获得1件当前调度中心等级的随机装备
+  band_weakness | 以己之长 | initiator=陈 | HP=26 | 被动效果：所有干员造成的物理和法术伤害变为弱点伤害（根据敌人的防御力和法术抗性变更伤害类型），精锐干员额外获得攻击力+16%，攻击速度+16
+  band_lmlee | 得闲饮茶 | initiator=老鲤 | HP=27 | 被动效果：第1、2回合的资金暂存至第3回合发放；第3回合进入休整期时，获得2、4阶随机干员各1名
+  band_fang | 协力共进 | initiator=芬 | HP=24 | 被动效果：第8、10、12、14回合进入休整期时获得1个<信标>
+<信标>：装备时销毁携带干员，在调度中心出现2名同等阶干员，免费获得其中1名；被销毁干员在下回合传递给对应盟约人数最多的队友
+  band_amedic | 外勤医疗 | initiator=Touch | HP=28 | 被动效果：所有玩家场上出现一名<预备干员-医疗>；战斗开始时，若场上至少有2名精锐干员，则替换为<Touch>
+  band_mech | 暴躁铁皮 | initiator=森蚺 | HP=29 | 被动效果：第1回合获得1名可以装备4件装备的特殊干员<“暴躁铁皮”>
+  band_treasure | 宝藏探机 | initiator=寻宝人 | HP=22 | 拖拽使用（消耗1）：选择一个可用地块，部署1个<“模拟宝藏”>（冷却3回合）
+<“模拟宝藏”>：被敌人触碰就会永久消失，战斗结束时若仍存在则获得额外1资金
+  band_upgrade | 至纯凝结 | initiator=缪尔赛思 | HP=28 | 拖拽使用（消耗0）：选择一名我方干员，立即使该干员晋升为精锐干员（每场模拟限1次）
+  band_breakaway | 消解空间 | initiator=Misery | HP=27 | 拖拽使用（消耗0）：选择一名我方干员，下场战斗开始后首次受到伤害时使其击倒，并召唤整备区最右侧干员
+  band_damaztic | 变形同构 | initiator=“变形者集群” | HP=22 | 被动效果：每5回合获得1件特殊装备<变形同构体>
+<变形同构体>：与特定装备一同装备时装备者将视为特定盟约成员
+  band_fund | 私募基金 | initiator=小贾斯汀 | HP=23 | 点击使用（消耗0）：随机获得1-6资金（冷却回合数等同于获得资金）
+  band_gain | 御守之力 | initiator=铃兰 | HP=20 | 拖拽使用（消耗0）：选择一名我方干员，触发该干员的<获得时>类特质
+  band_prepfin | 强制休整 | initiator=苏苏洛 | HP=21 | 拖拽使用（消耗0）：选择一名我方干员，使该干员的<休整期结束时>类特质本回合可以额外触发一次
+  band_mess | 不稳定要素 | initiator=昆图斯 | HP=24 | 第4回合解锁
+拖拽使用（消耗0）：选择一名我方干员，立即使其变为更高一阶的随机干员（最高不超过6阶）
+  band_protect | 献身护卫 | initiator=信仰搅拌机 | HP=27 | 第4回合解锁
+点击使用（消耗0）：自身目标生命值降至与场上最低的玩家相同并获得等同损失生命值的资金（至多10资金），在<休整期结束时>为该玩家回复等额目标生命值
+  band_random | 好多委托！ | initiator=“追随者们” | HP=21 | 被动效果：每次进入休整期时，从2个随机指令中选择1个并替换当前指令
+  band_cannot | 利滚利 | initiator=坎诺特 | HP=27 | 被动效果：每回合剩余的资金可以继承，剩余至少5资金时，每回合额外获得1资金
+  band_ducklord | “神秘顾客” | initiator=鸭爵 | HP=29 | 被动效果：从第5回合起，你和队友遭遇的部分敌人可能会替换为<鸭爵>、<高普尼克>、<流泪小子>、<圆仔>，击倒这些敌人可以获得1资金奖励（包括联防阶段）
+  band_rich | 最佳品味 | initiator=琳琅诗怀雅 | HP=24 | 消耗资金达到60时解锁
+点击使用（消耗0）：随机获取当前调度中心内的1名干员
+消耗资金达到120时升级为获取2名
+  band_substitute | 替身娃娃 | initiator=巫恋 | HP=25 | 被动效果：每回合首次出售初始干员时，改为与调度中心中随机1名干员交换
+  band_sell | 东之极道 | initiator=三船光平 | HP=22 | 拖拽使用（消耗0）：选择一名我方干员，将其出售并为所有已激活盟约叠加等同于该干员等阶的层数
+  band_support | 人才锁定 | initiator=雅拉 | HP=24 | 点击使用（消耗1）：刷新调度中心，必定包含1名比当前调度中心等级更高一阶（最高不超过6阶）的干员（每回合限3次）
+  band_high | 专享情报 | initiator=渡桥 | HP=30 | 点击使用（消耗3）：进行一次特殊刷新：此次刷新出现的干员优先为已部署在场上的干员（每场模拟限1次）
+  band_equipment | 精巧设计 | initiator=Mechanist | HP=29 | 被动效果：每回合首次装备合并进阶时，在调度中心出现3件装备（可能出现更高一阶的装备）免费获取其中1件
+点击使用（消耗0）：使调度中心出现1件新的装备并替换（每回合限2次）
+  band_pudd | 电气化！ | initiator=布丁 | HP=23 | 拖拽使用（消耗1）：选择调度中心的一件装备使其立刻销毁，并在下次战斗开始时使场上所有还有空栏位的干员暂时获得该装备直到战斗结束（无法对<装备时销毁>的装备使用）
+  band_closeout | 打包速递 | initiator=拜松 | HP=23 | 点击使用（消耗9）：获得当前调度中心中的所有干员，每回合休整期结束时指令消耗资金-1，使用后指令重置并可再次使用
+  band_pith | 优等生 | initiator=Pith | HP=24 | 被动效果：第1回合获得1名可以造成神经、灼燃、凋亡损伤的特殊干员，其属于【调和】盟约
+【调和】：激活时使场上核心盟约的激活人数+1，【调和】干员享受已激活的核心盟约的效果
+  band_limit | 正直教官 | initiator=坚雷 | HP=25 | 拖拽使用（消耗0）：选择一名我方干员，使其在下场战斗中卫戍能力的叠层上限提升，数量等同于当前回合数
+  band_bonus | 二重奏 | initiator=复奏 | HP=24 | 被动效果：每回合首次晋升精锐干员时，获得1次额外的晋升奖励
+  band_yan2 | 黑白相易 | initiator=望 | HP=23 | 拖拽使用（消耗1）：选择一名我方干员移除，获得1名不高于该干员等阶的【炎】干员
+<在场6名不同【炎】干员> 效果替换为战斗开始时收集【炎】干员部分属性召唤“炎佑”
+<在场9名不同【炎】干员> 效果改为召唤两只“炎佑”
+  band_yan | 广交豪杰 | initiator=杜遥夜 | HP=26 | 点击使用（消耗1）：刷新调度中心，优先刷新出1名【炎】干员（每回合限2次）
+  band_sargon | 沙洲梦魇 | initiator=娜仁图亚 | HP=24 | 被动效果：获得3名【萨尔贡】干员后使当前调度中心升级消耗资金-3，调度中心每个等级至多生效1次
+<在场6名不同【萨尔贡】干员> 效果替换为【萨尔贡】干员开启技能会使所有【萨尔贡】干员攻击力增加
+  band_pepe | 博学多通 | initiator=佩佩 | HP=23 | 被动效果：升级调度中心至2、4和6级后，获得1次特殊刷新：此次刷新出现的干员优先为【萨尔贡】干员
+  band_victoria | 自发制造 | initiator=洛洛 | HP=25 | 被动效果：每购买3名【维多利亚】干员，获得1件随机装备（等阶不高于当前调度中心）
+<在场6名不同【维多利亚】干员> 效果替换为【维多利亚】干员技能开启后，周围八格干员同时享受该干员携带的装备效果，持续一定时间
+  band_harold | 人才盲盒 | initiator=哈洛德 | HP=23 | 被动效果：从第4回合开始每2回合获得1名【维多利亚】干员（等阶不高于当前调度中心）
+  band_egir | 猎人战法 | initiator=歌蕾蒂娅 | HP=23 | 调度中心等级达到4级解锁
+点击使用（消耗1）：获得1名【阿戈尔】干员（等阶不高于当前调度中心）
+<在场6名不同【阿戈尔】干员> 效果替换为前3名【阿戈尔】干员首次被击倒时召唤整备区最右侧一名可部署至当前位置的【阿戈尔】干员
+  band_clementia | 崇高牺牲 | initiator=克莱门莎 | HP=26 | 被动效果：【阿戈尔】干员被击倒时，使已激活的【阿戈尔】盟约叠加等同于该干员等阶的层数
+  band_kazimier | 骑士团长 | initiator=焰尾 | HP=25 | 点击使用（消耗6）：获得1名【卡西米尔】干员（等阶不高于当前调度中心），每回合休整期结束时指令消耗资金-2，使用后指令重置并可再次使用
+<在场6名不同【卡西米尔】干员> 效果替换为【卡西米尔】干员阻挡时每2秒对周围敌人造成真实伤害并晕眩，未
+  band_mlynar | 业务指标 | initiator=玛恩纳 | HP=28 | 被动效果：每购买1名【卡西米尔】干员，下回合开始时资金+1，每回合至多3资金
+  band_kjerag2 | 不融信念 | initiator=耶拉 | HP=23 | 被动效果：在第4、7、10、13回合进入休整期时获得1个<谢拉格不融冰>
+<谢拉格不融冰>：造成伤害时有12%概率对目标施加1.5秒的寒冷
+<在场6名不同【谢拉格】干员> 效果替换为战场上每25秒吹过一阵寒风使敌人受到寒冷效果
+  band_kjerag | 雪域礼赠 | initiator=休露丝 | HP=23 | 被动效果：每回合首次购买的【谢拉格】干员消耗资金为1
+  band_siracusa | 量体裁衣 | initiator=裁度 | HP=26 | 被动效果：每回合首次主动刷新后获得1资金
+<在场6名不同【叙拉古】干员> 效果替换为【叙拉古】干员部署后进入隐匿状态，在隐匿状态和脱离隐匿10秒内对敌人攻击时有概率造成真实伤害并恐惧目标
+  band_bond | 团伙行动 | initiator=贾维 | HP=24 | 被动效果：每回合内主动刷新4次调度中心后，获得1名【叙拉古】干员（等阶不高于当前调度中心），每回合至多触发1次
+  band_lethania | 流动乐章 | initiator=车尔尼 | HP=24 | 点击使用（消耗1）：获得1名【莱塔尼亚】干员（等阶不高于当前调度中心），每次使用后指令消耗资金永久+1
+  band_ursus | 无惧风雪 | initiator=怒潮凛冬 | HP=26 | 点击使用（消耗5）：获得1名【乌萨斯】干员（等阶不高于当前调度中心），每次购买【乌萨斯】干员时指令消耗资金-1，使用后指令重置并可再次使用
+  band_iberia | 出航时刻 | initiator=引星棘刺 | HP=23 | 【伊比利亚】盟约激活人数达到4时解锁
+拖拽使用（消耗1）：选择一名调度中心内的干员，使其替换为不高于该干员等阶的【伊比利亚】干员（每回合限2次）
+
+## PROFILE SAMPLE
+NAME: Mechanist
+{
+  "profession": "重装",
+  "subProfession": "铁卫",
+  "position": "近战",
+  "blockCount": 3,
+  "skillIndex": 0,
+  "normalSkill": {
+    "name": "结构稳定",
+    "description": "最大生命值+26%，防御力+26%",
+    "spCost": 60,
+    "initSp": 15,
+    "duration": 40.0,
+    "spType": "自动回复"
+  },
+  "eliteSkill": {
+    "name": "结构稳定",
+    "description": "最大生命值+40%，防御力+40%",
+    "spCost": 50,
+    "initSp": 20,
+    "duration": 40.0,
+    "spType": "自动回复"
+  },
+  "normalRange": {
+    "base": "0-1",
+    "skill": null
+  },
+  "eliteRange": {
+    "base": "0-1",
+    "skill": null
+  },
+  "normalStats": {
+    "atk": 283,
+    "hp": 2604,
+    "def": 474,
+    "res": 0.0,
+    "interval": 1.2,
+    "aspd": 100,
+    "block": 3,
+    "level": 1,
+    "phase": 2,
+    "dps": 236,
+    "skillFactor": 1.0,
+    "skillDef": 0.26,
+    "skillHp": 0.26,
+    "talents": [
+      {
+        "pot": 0,
+        "def": 0.1,
+        "notes": [
+          "自身阻挡的敌人攻击速度-7"
+        ]
+      }
+    ]
+  },
+  "eliteStats": {
+    "atk": 322,
+    "hp": 3211,
+    "def": 591,
+    "res": 0.0,
+    "interval": 1.2,
+    "aspd": 100,
+    "block": 3,
+    "level": 60,
+    "phase": 2,
+    "dps": 268,
+    "skillFactor": 1.0,
+    "skillDef": 0.4,
+    "skillHp": 0.4,
+    "talents": [
+      {
+        "pot": 0,
+        "def": 0.1,
+        "notes": [
+          "自身阻挡的敌人攻击速度-7"
+        ]
+      }
+    ]
+  },
+  "potential": [],
+  "roles": [
+    "盾位"
+  ],
+  "stack": null,
+  "consumes": [],
+  "defaultModule": "",
+  "skills": {
+    "skchr_acfend_1": {
+      "normal": {
+        "skill": {
+          "name": "结构稳定",
+          "description": "最大生命值+26%，防御力+26%",
+          "spCost": 60,
+          "initSp": 15,
+          "duration": 40.0,
+          "spType": "自动回复"
+        },
+        "range": {
+          "base": "0-1",
+          "skill": null
+        },
+        "stats": {
+          "atk": 283,
+          "hp": 2604,
+          "def": 474,
+          "res": 0.0,
+          "interval": 1.2,
+          "aspd": 100,
+          "block": 3,
+          "level": 1,
+          "phase": 2,
+          "dps": 236,
+          "skillFactor": 1.0,
+          "skillDef": 0.26,
+          "skillHp": 0.26
+        }
+      },
+      "elite": {
+        "skill": {
+          "name": "结构稳定",
+          "description": "最大生命值+40%，防御力+40%",
+          "spCost": 50,
+          "initSp": 20,
+          "duration": 40.0,
+          "spType": "自动回复"
+        },
+        "range": {
+          "base": "0-1",
+          "skill": null
+        },
+        "stats": {
+          "atk": 322,
+          "hp": 3211,
+          "def": 591,
+          "res": 0.0,
+          "interval": 1.2,
+          "aspd": 100,
+          "block": 3,
+          "level": 60,
+          "phase": 2,
+          "dps": 268,
+          "skillFactor": 1.0,
+          "skillDef": 0.4,
+          "skillHp": 0.4
+        }
+      }
+    },
+    "skchr_acfend_2": {
+      "normal": {
+        "skill": {
+          "name": "不变性原理",
+          "description": "防御力+50%，第二天赋的效果提升至2倍",
+          "spCost": 42,
+          "initSp": 10,
+          "duration": 20.0,
+          "spType": "自动回复"
+        },
+        "range": {
+          "base": "0-1",
+          "skill": null
+        },
+        "stats": {
+          "atk": 283,
+          "hp": 2604,
+          "def": 474,
+          "res": 0.0,
+          "interval": 1.2,
+          "aspd": 100,
+          "block": 3,
+          "level": 1,
+          "phase": 2,
+          "dps": 236,
+          "skillFactor": 1.0,
+          "skillDef": 0.5
+        }
+      },
+      "elite": {
+        "skill": {
+          "name": "不变性原理",
+          "description": "防御力+65%，第二天赋的效果提升至3倍",
+          "spCost": 35,
+          "initSp": 15,
+          "duration": 20.0,
+          "spType": "自动回复"
+        },
+        "range": {
+          "base": "0-1",
+          "skill": null
+        },
+        "stats": {
+          "atk": 322,
+          "hp": 3211,
+          "def": 591,
+          "res": 0.0,
+          "interval": 1.2,
+          "aspd": 100,
+          "block": 3,
+          "level": 60,
+          "phase": 2,
+          "dps": 268,
+          "skillFactor":
+
+## ROLE VOCAB
+盾位:25, 奶位:25
+
+## STACK VOCAB
+{'kind': 'adjacent', 'covenants': [], 'amount': 3, 'cap': None, 'perRound': 3, 'temporary': False}:3, {'kind': 'self', 'covenants': [], 'amount': 1, 'cap': None, 'perRound': 1, 'temporary': False}:2, {'kind': 'once', 'covenants': ['炎'], 'amount': 0, 'cap': None, 'perRound': 0, 'temporary': False}:2, {'kind': 'covenant', 'covenants': ['维多利亚', '奥术'], 'amount': 3, 'cap': None, 'perRound': 3, 'temporary': False}:1, {'kind': 'amplifier', 'covenants': [], 'amount': 0, 'cap': None, 'perRound': 0, 'temporary': False, 'amplify': {'type': 'capPercent', 'value': 0.3, 'scope': 'around'}}:1, {'kind': 'covenant', 'covenants': ['乌萨斯'], 'amount': 1, 'cap': None, 'perRound': 5, 'temporary': False}:1, {'kind': 'self', 'covenants': [], 'amount': 3, 'cap': 6, 'perRound': 4.5, 'temporary': False}:1, {'kind': 'once', 'covenants': ['炎', '灵巧'], 'amount': 0, 'cap': None, 'perRound': 0, 'temporary': False}:1, {'kind': 'self', 'covenants': [], 'amount': 1, 'cap': 8, 'perRound': 6.0, 'temporary': False}:1, {'kind': 'adjacent', 'covenants': [], 'amount': 1, 'cap': 9, 'perRound': 6.75, 'temporary': False}:1, {'kind': 'covenant', 'covenants': ['乌萨斯', '迅捷'], 'amount': 1, 'cap': 16, 'perRound': 12.0, 'temporary': False}:1, {'kind': 'amplifier', 'covenants': ['谢拉格', '灵巧'], 'amount': 0, 'cap': None, 'perRound': 0, 'temporary': False, 'amplify': {'type': 'capPercent', 'value': 0.75, 'scope': 'front'}}:1, {'kind': 'covenant', 'covenants': ['谢拉格'], 'amount': 1, 'cap': 16, 'perRound': 12.0, 'temporary': False}:1, {'kind': 'grant', 'covenants': [], 'amount': 1, 'cap': 7, 'perRound': 5.25, 'temporary': False}:1, {'kind': 'covenant', 'covenants': ['奥术'], 'amount': 1, 'cap': None, 'perRound': 1, 'temporary': False}:1, {'kind': 'covenant', 'covenants': ['投资人'], 'amount': 2, 'cap': 16, 'perRound': 12.0, 'temporary': False}:1, {'kind': 'covenant', 'covenants': ['突袭', '不屈'], 'amount': 4, 'cap': 16, 'perRound': 12.0, 'temporary': False}:1, {'kind': 'covenant', 'covenants': ['谢拉格'], 'amount': 1, 'cap': 24, 'perRound': 18.0, 'temporary': False}:1, {'kind': 'covenant', 'covenants': ['莱塔尼亚'], 'amount': 1, 'cap': 1, 'perRound': 0.75, 'temporary': False}:1, {'kind': 'amplifier', 'covenants': ['乌萨斯'], 'amount': 0, 'cap': None, 'perRound': 0, 'temporary': False, 'amplify': {'type': 'tempBoost', 'value': 4, 'scope': 'around'}}:1, {'kind': 'covenant', 'covenants': ['莱塔尼亚', '叙拉古'], 'amount': 2, 'cap': None, 'perRound': 2, 'temporary': False}:1, {'kind': 'covenant', 'covenants': ['炎', '奥术'], 'amount': 2, 'cap': 24, 'perRound': 18.0, 'temporary': False}:1, {'kind': 'covenant', 'covenants': ['迅捷'], 'amount': 4, 'cap': 20, 'perRound': 15.0, 'temporary': False}:1, {'kind': 'covenant', 'covenants': ['阿戈尔', '助力'], 'amount': 3, 'cap': 9, 'perRound': 6.75, 'temporary': False}:1, {'kind': 'covenant', 'covenants': ['叙拉古', '奇迹'], 'amount': 2, 'cap': 8, 'perRound': 6.0, 'temporary': False}:1, {'kind': 'once', 'covenants': ['不屈'], 'amount': 0, 'cap': None, 'perRound': 0, 'temporary': False}:1, {'kind': 'covenant', 'covenants': ['远见'], 'amount': 3, 'cap': None, 'perRound': 3, 'temporary': False}:1, {'kind': 'adjacent', 'covenants': [], 'amount': 9, 'cap': None, 'perRound': 9, 'temporary': False}:1, {'kind': 'covenant', 'covenants': ['阿戈尔'], 'amount': 1, 'cap': 1, 'perRound': 0.75, 'temporary': False}:1, {'kind': 'covenant', 'covenants': ['伊比利亚', '迅捷'], 'amount': 12, 'cap': None, 'perRound': 12, 'temporary': False}:1, {'kind': 'covenant', 'covenants': ['维多利亚'], 'amount': 1, 'cap': None, 'perRound': 1, 'temporary': False}:1, {'kind': 'covenant', 'covenants': ['莱塔尼亚'], 'amount': 4, 'cap': None, 'perRound': 4, 'temporary': False}:1, {'kind': 'covenant', 'covenants': ['乌萨斯'], 'amount': 2, 'cap': None, 'perRound': 2, 'temporary': False}:1, {'kind': 'once', 'covenants': ['叙拉古'], 'amount': 0, 'cap': None, 'perRound': 0, 'temporary': False}:1, {'kind': 'once', 'covenants': ['坚守', '不屈'], 'amount': 0, 'cap': None, 'perRound': 0, 'temporary': False}:1, {'kind': 'covenant', 'covenants': ['阿戈尔'], 'amount': 4, 'cap': 8, 'perRound': 6.0, 'temporary': False}:1, {'kind': 'once', 'covenants': ['谢拉格'], 'amount': 0, 'cap': None, 'perRound': 0, 'temporary': False}:1, {'kind': 'covenant', 'covenants': ['伊比利亚'], 'amount': 12, 'cap': 12, 'perRound': 9.0, 'temporary': False}:1, {'kind': 'covenant', 'covenants': ['萨尔贡', '不屈'], 'amount': 4, 'cap': 12, 'perRound': 9.0, 'temporary': False}:1, {'kind': 'covenant', 'covenants': ['萨尔贡', '坚守'], 'amount': 2, 'cap': 4, 'perRound': 3.0, 'temporary': False}:1

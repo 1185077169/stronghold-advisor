@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><title>share link test</title></head>
+<body>
+<pre id="out">running...</pre>
+<iframe id="app" style="width:1400px;height:900px;border:1px solid #333"></iframe>
+<script>
+  var f = document.getElementById("app");
+
+  function enc(obj) {
+    var bytes = new TextEncoder().encode(JSON.stringify(obj));
+    var bin = "";
+    for (var i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+    return btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  }
+
+  var code = enc({
+    v: 1,
+    c: "炎",
+    e: "奥术",
+    s: "",
+    o: ["大丑", "黍", "夕"],
+    p: { early: "分享的前期思路", mid: "分享的中期思路", late: "分享的后期思路" },
+    l: { "大丑": "坚守盾牌 + 变形同构体 + 炎国短刀", "黍": "聚合急救箱" }
+  });
+  f.src = "../index.html#c=" + code;
+
+  function run() {
+    var d = f.contentDocument;
+    var w = f.contentWindow;
+    var out = [];
+    function q(s) { return d.querySelector(s); }
+    var tab = q(".center-tab.active");
+    out.push("tab=" + (tab ? tab.dataset.center : "none"));
+    out.push("count=" + q("#customCount").innerText);
+    out.push("core=" + q("#customCore").value + " extra=" + q("#customExtra").value);
+    out.push("slots=" + q("#customChips").innerText.replace(/\n/g, " ").slice(0, 220));
+    out.push("plan=" + [q("#customPhaseEarly").value, q("#customPhaseMid").value, q("#customPhaseLate").value]
+      .join(" | ").slice(0, 220));
+    var loads = Array.prototype.slice.call(d.querySelectorAll("#customLoadout input")).map(function (el) {
+      return el.dataset.loadoutOp + "=" + el.value;
+    });
+    out.push("loadout=" + loads.join(" | ").slice(0, 260));
+    out.push("hashCleared=" + (w.location.hash === ""));
+    out.push("shareBtn=" + !!q("#customShare"));
+    try { w.localStorage.removeItem("stronghold-advisor-v1"); } catch (e) { }
+    document.getElementById("out").textContent = out.join("\n");
+  }
+
+  f.onload = function () { setTimeout(run, 400); };
+</script>
+</body>
+</html>

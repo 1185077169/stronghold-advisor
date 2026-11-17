@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><title>UI test v2</title></head>
+<body>
+<pre id="out">running...</pre>
+<iframe id="app" src="../index.html" style="width:1400px;height:900px;border:1px solid #333"></iframe>
+<script>
+  var f = document.getElementById("app");
+
+  function run() {
+    var d = f.contentDocument;
+    var w = f.contentWindow;
+    var out = [];
+    function q(s) { return d.querySelector(s); }
+    function qa(s) { return Array.prototype.slice.call(d.querySelectorAll(s)); }
+
+    out.push("tabs=" + qa(".center-tab").length);
+    out.push("recs=" + qa("#recommendations .rec-card").length);
+    out.push("comps=" + qa("#compList .comp-item").length);
+
+    // 1) 选核心盟约：炎
+    var yan = qa("#coreFilter [data-core]").filter(function (b) { return b.dataset.core === "炎"; })[0];
+    yan.click();
+    out.push("after-炎 recs=" + qa("#recommendations .rec-card").length +
+      " names=" + qa("#recommendations .rec-card h3").map(function (h) { return h.innerText; }).join(","));
+
+    // 2) 再选附加盟约：奥术
+    var ex = q("#extraFilter");
+    ex.value = "奥术";
+    ex.dispatchEvent(new w.Event("change", { bubbles: true }));
+    out.push("after-奥术 recs=" + qa("#recommendations .rec-card").length +
+      " names=" + qa("#recommendations .rec-card h3").map(function (h) { return h.innerText; }).join(","));
+
+    // 3) 切到自己配阵容
+    qa(".center-tab").filter(function (b) { return b.dataset.center === "custom"; })[0].click();
+    out.push("custom visible=" + !q("#center-custom").hidden + " filter hidden=" + q("#filterBar").hidden);
+
+    // 4) 搜索并添加干员
+    var cs = q("#customSearch");
+    cs.value = "余";
+    cs.dispatchEvent(new w.Event("input", { bubbles: true }));
+    var add = q("#customResults [data-add-custom]");
+    if (add) add.click();
+    out.push("custom chips=" + q("#customChips").innerText.replace(/\n/g, " ") +
+      " stats=" + q("#customStats").innerText.replace(/\n/g, " | "));
+
+    // 5) 保存
+    q("#customSave").click();
+    out.push("saved=" + q("#savedCustoms").innerText.replace(/\n/g, " | "));
+
+    // 6) 从系统推荐复制到自定义
+    qa(".center-tab").filter(function (b) { return b.dataset.center === "rec"; })[0].click();
+    var copy = q("#recommendations [data-copy]");
+    if (copy) copy.click();
+    out.push("after-copy customVisible=" + !q("#center-custom").hidden +
+      " chips=" + q("#customChips").innerText.replace(/\n/g, " "));
+
+    // 清理测试状态，避免影响正常打开
+    try { w.localStorage.removeItem("stronghold-advisor-v1"); } catch (e) { }
+
+    document.getElementById("out").textContent = out.join("\n");
+  }
+
+  if (f.contentDocument && f.contentDocument.readyState === "complete") {
+    setTimeout(run, 300);
+  } else {
+    f.onload = function () { setTimeout(run, 300); };
+  }
+</script>
+</body>
+</html>

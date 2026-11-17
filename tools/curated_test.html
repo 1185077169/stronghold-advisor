@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><title>curated test</title></head>
+<body>
+<pre id="out">running...</pre>
+<iframe id="app" src="../index.html" style="width:1400px;height:900px;border:1px solid #333"></iframe>
+<script>
+  var f = document.getElementById("app");
+
+  function run() {
+    var d = f.contentDocument;
+    var w = f.contentWindow;
+    var out = [];
+    function q(s) { return d.querySelector(s); }
+    function qa(s) { return Array.prototype.slice.call(d.querySelectorAll(s)); }
+
+    // 1) 只看主播
+    q("#curatedFilter").click();
+    out.push("filterActive=" + q("#curatedFilter").classList.contains("active"));
+    out.push("recs=" + qa("#recommendations .rec-card").length +
+      " titles=" + qa("#recommendations .rec-card h3").map(function (h) { return h.innerText; }).join(","));
+    out.push("badges=" + qa("#recommendations .badge-curated").length);
+    out.push("comps=" + qa("#compList .comp-item").length);
+
+    // 2) 推荐卡的装备/转职表
+    var rl = q("#recommendations details.rec-loadout");
+    if (rl) rl.open = true;
+    out.push("recLoadout=" + (rl ? rl.innerText.replace(/\n/g, " | ") : "none").slice(0, 420));
+
+    // 3) 阵容库详情的装备/转职 + 来源
+    qa(".center-tab").filter(function (b) { return b.dataset.center === "library"; })[0].click();
+    var first = q("#compList details");
+    if (first) first.open = true;
+    out.push("libLoadout=" + (q("#compList .loadout-table") ? q("#compList .loadout-table").innerText.replace(/\n/g, " | ") : "none").slice(0, 420));
+    out.push("source=" + (q("#compList .source-link") ? q("#compList .source-link").href : "none"));
+
+    // 4) 只看主播 + 维多利亚
+    qa(".center-tab").filter(function (b) { return b.dataset.center === "rec"; })[0].click();
+    var vy = qa("#coreFilter [data-core]").filter(function (b) { return b.dataset.core === "维多利亚"; })[0];
+    if (vy) vy.click();
+    out.push("victoriaRecs=" + qa("#recommendations .rec-card").length +
+      " titles=" + qa("#recommendations .rec-card h3").map(function (h) { return h.innerText; }).join(","));
+
+    // 5) 清空筛选
+    q("#clearFilter").click();
+    out.push("afterClear onlyCurated=" + q("#curatedFilter").classList.contains("active") +
+      " comps=" + qa("#compList .comp-item").length);
+
+    try { w.localStorage.removeItem("stronghold-advisor-v1"); } catch (e) { }
+    document.getElementById("out").textContent = out.join("\n");
+  }
+
+  if (f.contentDocument && f.contentDocument.readyState === "complete") {
+    setTimeout(run, 300);
+  } else {
+    f.onload = function () { setTimeout(run, 300); };
+  }
+</script>
+</body>
+</html>

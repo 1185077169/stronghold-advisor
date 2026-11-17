@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><title>curated shot</title></head>
+<body style="margin:0;background:#0a0e14">
+<iframe id="app" src="../index.html" style="width:1440px;height:1500px;border:0"></iframe>
+<script>
+  var f = document.getElementById("app");
+  function run() {
+    var d = f.contentDocument;
+    d.querySelector("#curatedFilter").click();
+    var rl = d.querySelector("#recommendations details.rec-loadout");
+    if (rl) rl.open = true;
+  }
+  if (f.contentDocument && f.contentDocument.readyState === "complete") {
+    setTimeout(run, 300);
+  } else {
+    f.onload = function () { setTimeout(run, 300); };
+  }
+</script>
+</body>
+</html>

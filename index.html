@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>卫戍协议 · 战术终端</title>
+  <meta name="description" content="《明日方舟》卫戍协议阵容推荐：选开局策略和盟约，查看系统推荐、主播实战阵容，也能自己配阵容、写前中后期思路和装备/转职并分享。">
+  <meta name="theme-color" content="#0b0f14">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="卫戍协议 · 战术终端">
+  <meta property="og:description" content="选策略和盟约看阵容推荐，支持自己配阵容、写思路与装备/转职，并生成分享链接。">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="jsError" class="js-error" hidden></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">SP</div>
+      <div>
+        <h1>卫戍协议 · 战术终端</h1>
+        <p class="sub">选盟约 · 看阵容 · 自己配</p>
+      </div>
+    </div>
+    <div class="top-actions">
+      <span id="seasonLabel" class="season"></span>
+      <button id="resetBtn" class="ghost" type="button">重置本局</button>
+    </div>
+  </header>
+
+  <div class="hint">
+    <strong>用法：</strong>先选开局策略和核心盟约（可选附加盟约），系统会按策略契合度和盟约给出阵容；也可以在“自己配阵容”里手动拼一套，自己写前中后期思路和装备，然后保存或分享。
+  </div>
+
+  <main class="layout">
+    <aside class="panel left-panel">
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="box" type="button">干员 / Box</button>
+        <button class="tab" data-tab="ban" type="button">Ban 位</button>
+      </div>
+
+      <section id="tab-box" class="tab-panel">
+        <label class="check-row">
+          <input type="checkbox" id="soloMode" checked>
+          <span>全干员可用（特许模式）</span>
+        </label>
+        <p class="muted small" id="boxHint">关闭后，只按你勾选的 box 计算可达性。</p>
+        <input id="opSearch" class="search" type="search" placeholder="搜索干员 / 职业 / 盟约">
+        <div id="opList" class="op-list"></div>
+      </section>
+
+      <section id="tab-ban" class="tab-panel" hidden>
+        <h3>核心盟约 <span class="muted small">点击禁用</span></h3>
+        <div id="banCore" class="chip-grid"></div>
+        <h3>附加盟约 <span class="muted small">点击禁用</span></h3>
+        <div id="banExtra" class="chip-grid"></div>
+        <h3>禁用干员 <span class="muted small">本局 ban 位</span></h3>
+        <input id="banSearch" class="search" type="search" placeholder="搜索要 ban 的干员">
+        <div id="banList" class="op-list compact"></div>
+      </section>
+    </aside>
+
+    <section class="center">
+      <div class="filter-bar panel" id="filterBar">
+        <div class="filter-row">
+          <span class="filter-label">开局策略</span>
+          <select id="strategyFilter" class="filter-select strategy-select"></select>
+          <span id="strategyHint" class="muted small"></span>
+        </div>
+        <div id="strategyDesc" class="strategy-desc" hidden></div>
+        <div class="filter-row">
+          <span class="filter-label">来源</span>
+          <button id="curatedFilter" class="chip" type="button">只看主播推荐</button>
+        </div>
+        <div class="filter-row">
+          <span class="filter-label">核心盟约</span>
+          <div id="coreFilter" class="chip-grid"></div>
+        </div>
+        <div class="filter-row">
+          <span class="filter-label">附加盟约</span>
+          <select id="extraFilter" class="filter-select"></select>
+          <button id="clearFilter" class="ghost small-btn" type="button">清空筛选</button>
+        </div>
+      </div>
+
+      <div class="center-tabs" role="tablist">
+        <button class="center-tab active" data-center="rec" type="button">系统推荐</button>
+        <button class="center-tab" data-center="custom" type="button">自己配阵容</button>
+        <button class="center-tab" data-center="library" type="button">全部阵容</button>
+      </div>
+
+      <section id="center-rec" class="center-panel">
+        <div class="section-head">
+          <h2>推荐阵容</h2>
+          <span id="recHint" class="muted small"></span>
+        </div>
+        <div id="recommendations" class="rec-grid"></div>
+
+        <div class="section-head">
+          <h2>当前场上</h2>
+          <span id="boardCount" class="muted small"></span>
+        </div>
+        <div class="panel board-panel">
+          <input id="boardSearch" class="search" type="search" placeholder="搜索并添加场上干员...">
+          <div id="boardChips" class="chip-row"></div>
+          <div id="boardResults" class="search-results"></div>
+        </div>
+      </section>
+
+      <section id="center-custom" class="center-panel" hidden>
+        <div class="custom-grid">
+          <div class="panel custom-form">
+            <h3>1. 选盟约 / 策略</h3>
+            <div class="custom-selects">
+              <label>核心盟约 <select id="customCore"></select></label>
+              <label>附加盟约 <select id="customExtra"></select></label>
+              <label>开局策略 <select id="customStrategy"></select></label>
+            </div>
+
+            <h3>2. 快速配置</h3>
+            <div class="quick-actions">
+              <button id="customAutoCore" class="mini-btn" type="button">自动补核心</button>
+              <button id="customAutoFlex" class="mini-btn" type="button">自动补外援</button>
+              <button id="customAutoAll" class="primary" type="button">一键套用推荐</button>
+              <button id="customClearTop" class="ghost" type="button">清空</button>
+            </div>
+
+            <h3>3. 选干员 <span id="customCount" class="muted small">0/9</span></h3>
+            <input id="customSearch" class="search" type="search" placeholder="搜索干员名 / 职业 / 盟约（可留空直接浏览）">
+            <div class="candidate-filters">
+              <button class="chip active" data-cfilter="all" type="button">全部</button>
+              <button class="chip" data-cfilter="core" type="button">核心</button>
+              <button class="chip" data-cfilter="extra" type="button">外援</button>
+              <button class="chip" data-cfilter="tank" type="button">盾位</button>
+              <button class="chip" data-cfilter="heal" type="button">奶位</button>
+              <button class="chip" data-cfilter="dps" type="button">输出</button>
+              <select id="customTier" class="filter-select">
+                <option value="">全部等阶</option>
+                <option value="1">Ⅰ 阶</option>
+                <option value="2">Ⅱ 阶</option>
+                <option value="3">Ⅲ 阶</option>
+                <option value="4">Ⅳ 阶</option>
+                <option value="5">Ⅴ 阶</option>
+                <option value="6">Ⅵ 阶</option>
+              </select>
+            </div>
+            <div id="customResults" class="candidate-list"></div>
+
+            <h3>4. 当前阵容 <span id="customSlotsHint" class="muted small"></span></h3>
+            <div id="customChips" class="slot-grid"></div>
+
+            <div class="custom-actions">
+              <button id="customSave" class="primary" type="button">保存这套</button>
+              <button id="customShare" class="ghost" type="button">复制分享链接</button>
+              <button id="customClear" class="ghost" type="button">清空</button>
+            </div>
+          </div>
+          <div class="panel custom-stats">
+            <h3>阵容检查</h3>
+            <div id="customStats" class="stat-grid"></div>
+            <div id="customWarnings" class="tips"></div>
+            <button id="customPlanJump" class="mini-btn" type="button">看思路 / 装备 ↓</button>
+          </div>
+        </div>
+
+        <div class="section-head">
+          <h2>自配思路 / 装备</h2>
+          <span class="muted small">自己写，随阵容保存和分享</span>
+        </div>
+        <div class="panel custom-plan">
+          <div class="plan-head">
+            <h3>前中后期思路</h3>
+            <button id="customPhaseSuggest" class="mini-btn" type="button" title="只填入还没写的栏位">填入参考</button>
+          </div>
+          <div id="customPhases" class="phase-edit">
+            <label>前期
+              <textarea id="customPhaseEarly" rows="2" maxlength="1200" placeholder="例如：前 3 回合先凑 3 炎，不深刷，优先升 2 本。"></textarea>
+            </label>
+            <label>中期
+              <textarea id="customPhaseMid" rows="2" maxlength="1200" placeholder="例如：4-8 回合补 6 炎，5 本找主 C，外援逐步到位。"></textarea>
+            </label>
+            <label>后期
+              <textarea id="customPhaseLate" rows="2" maxlength="1200" placeholder="例如：9 回合后补满 8 人，主 C 升精锐，装备给盾位/主 C。"></textarea>
+            </label>
+          </div>
+
+          <div class="plan-head">
+            <h3>干员装备 / 转职</h3>
+            <button id="customLoadoutSuggest" class="mini-btn" type="button" title="只填入还没写的干员">填入参考</button>
+          </div>
+          <div id="customLoadout" class="loadout-editor"></div>
+        </div>
+
+        <div class="section-head">
+          <h2>已保存的自定义阵容</h2>
+          <span class="muted small">存在本地浏览器</span>
+        </div>
+        <div id="savedCustoms" class="saved-list"></div>
+      </section>
+
+      <section id="center-library" class="center-panel" hidden>
+        <div class="section-head">
+          <h2>全部阵容</h2>
+          <span id="libHint" class="muted small"></span>
+        </div>
+        <div id="compList" class="comp-list"></div>
+      </section>
+    </section>
+
+    <aside class="panel right-panel">
+      <h2>商店期望</h2>
+      <label class="shop-level">查看本数
+        <select id="level">
+          <option value="1">1 本</option>
+          <option value="2">2 本</option>
+          <option value="3">3 本</option>
+          <option value="4">4 本</option>
+          <option value="5">5 本</option>
+          <option value="6">6 本</option>
+        </select>
+      </label>
+      <input id="targetSearch" class="search" type="search" placeholder="搜索目标干员...">
+      <div id="targetResults" class="search-results"></div>
+      <div id="targetDetail" class="target-detail">
+        <p class="muted small">选一名干员，查看当前本数下每次刷新的出现期望。</p>
+      </div>
+
+      <h2>经济提示</h2>
+      <div id="econTips" class="tips"></div>
+
+      <h2>本局摘要</h2>
+      <div id="summary" class="summary"></div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <span>数据来源：LBEILC/StrongholdAssistant（Apache-2.0）· 非官方个人工具 · 与鹰角网络无隶属关系</span>
+    <span id="dataMeta"></span>
+  </footer>
+
+  <script>
+    window.addEventListener("error", function (e) {
+      var el = document.getElementById("jsError");
+      if (!el) return;
+      el.hidden = false;
+      el.textContent = "页面脚本出错：" + (e.message || e.error || "未知错误") + "（可打开开发者工具查看详情）";
+    });
+  </script>
+  <script src="js/data.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

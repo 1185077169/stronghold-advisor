@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><title>detail test</title></head>
+<body style="margin:0;background:#0a0e14">
+<iframe id="app" src="../index.html" style="width:1440px;height:1320px;border:0"></iframe>
+<script>
+  var f = document.getElementById("app");
+  function run() {
+    var d = f.contentDocument;
+    var tabs = Array.prototype.slice.call(d.querySelectorAll(".center-tab"));
+    var lib = tabs.filter(function (b) { return b.dataset.center === "library"; })[0];
+    if (lib) lib.click();
+    var first = d.querySelector("#compList details");
+    if (first) first.open = true;
+  }
+  if (f.contentDocument && f.contentDocument.readyState === "complete") {
+    setTimeout(run, 300);
+  } else {
+    f.onload = function () { setTimeout(run, 300); };
+  }
+</script>
+</body>
+</html>

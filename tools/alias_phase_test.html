@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><title>alias + phase test</title></head>
+<body>
+<pre id="out">running...</pre>
+<iframe id="app" src="../index.html" style="width:1400px;height:900px;border:1px solid #333"></iframe>
+<script>
+  var f = document.getElementById("app");
+
+  function run() {
+    var d = f.contentDocument;
+    var w = f.contentWindow;
+    var out = [];
+    function q(s) { return d.querySelector(s); }
+    function qa(s) { return Array.prototype.slice.call(d.querySelectorAll(s)); }
+
+    // 1) 搜“大丑”应出现暴躁铁皮
+    var s = q("#opSearch");
+    s.value = "大丑";
+    s.dispatchEvent(new w.Event("input", { bubbles: true }));
+    out.push("opList=" + q("#opList").innerText.replace(/\n/g, " ").slice(0, 220));
+
+    // 2) 商店查询也能搜到
+    var ts = q("#targetSearch");
+    ts.value = "大丑";
+    ts.dispatchEvent(new w.Event("input", { bubbles: true }));
+    out.push("target=" + q("#targetResults").innerText.replace(/\n/g, " "));
+
+    // 3) 自配添加“大丑”
+    qa(".center-tab").filter(function (b) { return b.dataset.center === "custom"; })[0].click();
+    var cs = q("#customSearch");
+    cs.value = "大丑";
+    cs.dispatchEvent(new w.Event("input", { bubbles: true }));
+    out.push("customResults=" + q("#customResults").innerText.replace(/\n/g, " "));
+    var add = q("#customResults [data-add-custom]");
+    if (add) add.click();
+    out.push("customChips=" + q("#customChips").innerText.replace(/\n/g, " "));
+
+    // 4) 选炎系经济策略，看推荐卡过渡
+    qa(".center-tab").filter(function (b) { return b.dataset.center === "rec"; })[0].click();
+    var sf = q("#strategyFilter");
+    sf.value = "band_yan";
+    sf.dispatchEvent(new w.Event("change", { bubbles: true }));
+    var d1 = q("#recommendations details.rec-phase");
+    if (d1) d1.open = true;
+    out.push("phaseYan=" + (d1 ? d1.innerText.replace(/\n/g, " | ") : "none").slice(0, 340));
+
+    // 5) 换部署策略，过渡应变化
+    sf = q("#strategyFilter");
+    sf.value = "band_emperor";
+    sf.dispatchEvent(new w.Event("change", { bubbles: true }));
+    var d2 = q("#recommendations details.rec-phase");
+    if (d2) d2.open = true;
+    out.push("phaseDeploy=" + (d2 ? d2.innerText.replace(/\n/g, " | ") : "none").slice(0, 340));
+
+    // 6) 阵容库详情也应跟随策略
+    qa(".center-tab").filter(function (b) { return b.dataset.center === "library"; })[0].click();
+    var first = q("#compList details");
+    if (first) first.open = true;
+    out.push("libPhase=" + q("#compList .phase-list").innerText.replace(/\n/g, " | ").slice(0, 340));
+
+    try { w.localStorage.removeItem("stronghold-advisor-v1"); } catch (e) { }
+    document.getElementById("out").textContent = out.join("\n");
+  }
+
+  if (f.contentDocument && f.contentDocument.readyState === "complete") {
+    setTimeout(run, 300);
+  } else {
+    f.onload = function () { setTimeout(run, 300); };
+  }
+</script>
+</body>
+</html>
